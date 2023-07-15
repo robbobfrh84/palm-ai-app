@@ -1,10 +1,10 @@
 # To Do ✅🟡🟠
-- ✅ Create new repo `palm-ai-app` > Move and delete AI Labs...
-- 🏗️ Add Express too app
-  - ? 🏗️ Postman? 
-- 🏗️ Refactor app as needed on B.E.
-- 🏗️ Create front end. RAAAAWWWW
-- ? 🏗️ if it looks like B.E. is square. Host on app engine? 
+- Settle on input/output. 
+- Add Express too app
+  - ? Postman ? 
+- Refactor app as needed on B.E.
+- Create front end. RAAAAWWWW
+- ? if it looks like B.E. is square. Host on app engine? 
 
 ----
 # Raw Journal.md
