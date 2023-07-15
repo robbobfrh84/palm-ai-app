@@ -37,53 +37,7 @@ client.generateText({
   },
   // only_return: ["red", "green", "blue"],
 }).then(result => {
-  // console.log(JSON.stringify(result, null, 2));
   // console.log('result:',JSON.stringify(result, null, 2))
   const output = JSON.stringify(result[0].candidates[0].output, null, 2)
   console.log(input+" - "+output);
 });
-
-
-// Another option ... pretty much the oposite...
-
-// const promptString = `input: red
-// output: Apple,
-// Strawberry,
-// Tomato,
-// Red rose,
-// Fire truck,
-// Stop sign,
-// input: green
-// output: Grass
-// Trees
-// Leaves
-// Emeralds
-// Limes
-// Cucumbers
-// input: blue
-// output: The sky
-// The ocean
-// Blueberries
-// Blue jays (a type of bird)
-// Blue whales
-// input: yellow
-// output: Sunflowers
-// Lemons
-// Bananas
-// Rubber ducks
-// Corn
-// input: white
-// output: Snow
-// Clouds
-// Milk
-// Sugar
-// Salt
-// Rice
-// input: black
-// output: Coal
-// Night sky
-// Blackboard
-// Raven
-// Tuxedo
-// input: ${input}
-// output:`;
