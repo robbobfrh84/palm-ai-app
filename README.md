@@ -1,5 +1,5 @@
 # palm-ai-app
-An application build using the PaLM API
+An application build using the PaLM API.
 
 # Development
 - `npm install`
