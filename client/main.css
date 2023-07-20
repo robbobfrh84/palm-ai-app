@@ -1,0 +1,23 @@
+body {
+  background-color:  rgb(210,205,205); /* 🔥temp */
+}
+input {
+  width: 300px;
+}
+.colorCircleContainer {
+  display: inline-block;
+  margin: 10px;
+}
+.colorName, .colorCircle {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+}
+.colorName {
+  text-align: center;
+}
+.colorCircle {
+  height: 100px;
+  min-height: 100px;
+  border-radius: 50%;
+}
