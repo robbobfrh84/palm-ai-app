@@ -1,7 +1,6 @@
 let URL = "https://palm-ai-app.uw.r.appspot.com/"
 
 window.onload = ()=>{
-  console.log(window.location)
   const hash = window.location.hash
   if (hash === "#dev") {
     URL = "http://localhost:8080/"
