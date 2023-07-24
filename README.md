@@ -3,7 +3,7 @@ An application built using the PaLM API, the App is a fun color generator game t
 
 ##### Live Links 🎙️
 
-- Front-end Web Application: https://robbobfrh84.github.io/palm-ai-app/client/
+- Front-end Web Application: https://robbobfrh84.github.io/palm-ai-app/
 - Server: https://palm-ai-app.uw.r.appspot.com/
 
 ##### Code served from 🏡
@@ -33,13 +33,16 @@ This project uses Google App Engine. I wrote this [blog post](https://medium.com
 
 ##### Deploying Front End 
 
-- Any changes pushed to the `main` branch will trigger Github's Actions to deploy to https://robbobfrh84.github.io/palm-ai-app/client/
+This app is setup to deploy from the `client` subfolder. And, the branch `gh-pages` was made to handle that. So pushing to the main branch **will not** deploy changes to the front end. You'll need to run this command to do that. Which will trigger Github's actions to update your code and deploy the changes.
+
+- `git subtree push --prefix client origin gh-pages`
+  - Live URL:  https://robbobfrh84.github.io/palm-ai-app/
 
 ##### Deploying Back End API
 
 - `cd server`
 - `gcloud app deploy` 
-  - https://palm-ai-app.uw.r.appspot.com/
+  - Live URL: https://palm-ai-app.uw.r.appspot.com/
 
 - Then, you can run `gcloud app browse` to open the root url in a browser window.
 - And, you can even watch the live logs with `gcloud app logs tail -s default`
