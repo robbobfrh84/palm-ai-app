@@ -2,9 +2,14 @@ let _URL = "http://localhost:8080/"
 
 window.onload = ()=>{
   const hash = window.location.hash
-  if (hash === "#prod") {
-    _URL = "https://palm-ai-app.uw.r.appspot.com/"
+  if (
+    window.location.origin + window.location.pathname === "https://robbobfrh84.github.io/palm-ai-app/"
+    ||
+    hash === "#prod"
+  ) {
+      _URL = "https://palm-ai-app.uw.r.appspot.com/"
   }
+
   console.log('_URL:',_URL)
   thingInput.focus()
 }
