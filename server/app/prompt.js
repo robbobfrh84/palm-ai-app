@@ -1,6 +1,6 @@
 const { validColors } = require('./colors.js')
 
-function getPromptString(input) {
+function getPromptString(thing, colors) {
 
   const examplesArray = [
     ["blood", "red"],
@@ -26,9 +26,9 @@ function getPromptString(input) {
   
   Classify the following items as [${validColors}].
 
-  return minimum 2 outputs, seperated by a comma.
+  return minimum ${colors} outputs, seperated by a comma.
 
-  input: ${input}
+  input: ${thing}
   output:
   `
 

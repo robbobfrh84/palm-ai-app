@@ -16,9 +16,9 @@ const client = new TextServiceClient({
 
 const stopSequences = [];
 
-const reqTextPrompt = function(input) {
+const reqTextPrompt = function( thing, colors, requests ) {
 
-  const promptString = getPromptString(input)
+  const promptString = getPromptString( thing, colors )
 
   return new Promise(resolve => {
     client.generateText({
