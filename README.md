@@ -28,6 +28,10 @@ An application built using the PaLM API, the App is a fun color generator game t
 - Open `index.html`
 - If you're using VS Code you can install "Live Server" extention and click "Go Live" on the bottom nav bar in VS Code to hot reload your front end. 
 
+NOTE: the default API url is `http://localhost:8080/`. If you'd like to use the production API url, add `#prod` to your **client** url. 
+- For example: `http://127.0.0.1:5500/#prod`
+  
+
 # 🚀 Deployment 🚀
 This project uses Google App Engine. I wrote this [blog post](https://medium.com/@bobmain49/node-js-app-engine-with-google-cli-getting-started-guide-2023-556a4805cebd) about setting that up. Also, see this [blog post](https://medium.com/@bobmain49/dealing-with-sh-gcloud-command-not-found-after-setting-up-gcloud-cli-5e11b9290e6) if you're having issues with the `gcloud` command not being found. Once that's set up all you'll need to do is run these commands to deploy. 
 

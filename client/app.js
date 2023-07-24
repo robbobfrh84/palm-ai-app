@@ -1,10 +1,11 @@
-let URL = "https://palm-ai-app.uw.r.appspot.com/"
+let _URL = "http://localhost:8080/"
 
 window.onload = ()=>{
   const hash = window.location.hash
-  if (hash === "#dev") {
-    URL = "http://localhost:8080/"
+  if (hash === "#prod") {
+    _URL = "https://palm-ai-app.uw.r.appspot.com/"
   }
+  console.log('_URL:',_URL)
   thingInput.focus()
 }
 window.reload = ()=>{
@@ -21,13 +22,11 @@ document.body.addEventListener("keypress", function(event) {
 });
 
 function get(thing, colors, requests){
+  colorNames.innerHTML = ""
   thing = thing || thingInput.value
   colors = colors || colorsInput.value
   requests = requests || requestsInput.value
-  const urlString = URL+thing+"/"+colors+"/"+requests
-  console.log('urlString:',urlString)
-
-  // fetch(URL+thing+"/"+colors+"/"+requests)
+  const urlString = _URL+thing+"/"+colors+"/"+requests
   fetch(urlString)
     .then( res => res.json())
     .then( data => displayColors(data))
