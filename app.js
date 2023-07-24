@@ -20,10 +20,15 @@ document.body.addEventListener("keypress", function(event) {
   }
 });
 
+function get(thing, colors, requests){
+  thing = thing || thingInput.value
+  colors = colors || colorsInput.value
+  requests = requests || requestsInput.value
+  const urlString = URL+thing+"/"+colors+"/"+requests
+  console.log('urlString:',urlString)
 
-function get(){
-  const input = thingInput.value
-  fetch(URL+input)
+  // fetch(URL+thing+"/"+colors+"/"+requests)
+  fetch(urlString)
     .then( res => res.json())
     .then( data => displayColors(data))
 }

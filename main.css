@@ -4,6 +4,15 @@ body {
 input {
   width: 300px;
 }
+.label {
+  display: inline-block;
+  width: 120px;
+}
+input.number {
+  width: 20px;
+  margin: 0;
+  text-align: center;
+}
 .colorCircleContainer {
   display: inline-block;
   margin: 10px;
