@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang='en'>
-<title> ? title ? </title>
+<title> Colors A.I. </title>
 <!-- <link rel='icon' href='link/or/path'>  -->
 <head>
   <meta charset='UTF-8'><meta http-equiv='X-UA-Compatible' content='ie=edge'>
@@ -8,14 +8,24 @@
 </head>
 <body>
   
-  <h1> Things to Colors A.I. </h1>
+  <h1> Colors A.I. </h1>
 
-  thing: <input type="text"
-    id="thingInput" 
-    placeholder="...input a thing (example: cat, or Calico Cat)" 
-  >
+  <div class="label">Thing:</div>
+  <input id="thingInput" placeholder="...input a thing (example: cat, or Calico Cat)">
+  <br>
+  <div class="label">Min. colors try:</div>
+  <input class="number" id="colorsInput" value="2" >
+  <br>
+  <div class="label">Min. requests try:</div>
+  <input class="number" id="requestsInput" value="1" >
+
   <hr>
   <button onclick="get()">Enter</button>
+  Tests >
+  <button onclick="get('usa')">*usa</button>
+  <button onclick="get('cat')">*Cat</button>
+  <button onclick="get('cat',4,3)">*Cat,4,3</button>
+
   <hr>
 
   <div id="colorNames"></div>
