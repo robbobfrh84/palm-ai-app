@@ -16,7 +16,7 @@ const client = new TextServiceClient({
 
 const stopSequences = [];
 
-const reqTextPrompt = function( thing, colors, requests ) {
+const reqTextPrompt = function( thing, colors ) {
 
   const promptString = getPromptString( thing, colors )
 
