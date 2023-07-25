@@ -1,18 +1,15 @@
 let _URL = "http://localhost:8080/"
+let loaderOn = false
 
 window.onload = ()=>{
   const hash = window.location.hash
-  if (
-    window.location.origin + window.location.pathname === "https://robbobfrh84.github.io/palm-ai-app/"
-    ||
-    hash === "#prod"
-  ) {
-      _URL = "https://palm-ai-app.uw.r.appspot.com/"
+  const clientURL = window.location.origin + window.location.pathname
+  if ( clientURL === "https://robbobfrh84.github.io/palm-ai-app/" || hash === "#prod") {
+    _URL = "https://palm-ai-app.uw.r.appspot.com/"
   }
-
-  console.log('_URL:',_URL)
   thingInput.focus()
 }
+
 window.reload = ()=>{
   thingInput.focus()
 }
@@ -21,42 +18,86 @@ document.body.addEventListener("keypress", function(event) {
   if (event.key === "Enter" && thingInput.value != "") {
     event.preventDefault();
     get()
-  } else {
-    console.log('no input')
-  }
-});
+  } 
+})
 
-function get(thing, colors, requests){
+function UIGet(thing, colors, requests) {
   colorNames.innerHTML = ""
-  thing = thing || thingInput.value
-  colors = colors || colorsInput.value
-  requests = requests || requestsInput.value
-  const urlString = _URL+thing+"/"+colors+"/"+requests
-  fetch(urlString)
-    .then( res => res.json())
-    .then( data => displayColors(data))
+  get(thing, colors, requests)
 }
 
-function displayColors({ validOutputs, colorObjectArray }) {
-  console.log('validOutputs, colorObjectArray:',validOutputs, colorObjectArray)
-  if (validOutputs.length > 1) {
-    colorNames.innerHTML = ""
-    validOutputs.forEach(c=>{
-      let rgb = colorObjectArray.filter(o=>o.name === c)[0]?.rgb
-      colorNames.innerHTML += /*html*/`
-        <div class="colorCircleContainer">
-          <div class='colorName'>${c}</div>
-          <div 
-            class='colorCircle' id="${c}" 
-            style="background-color: ${rgb || ''};"
-          ></div>
-        </div>
-      `
-      if (!rgb && c === "transparent") {
-        console.log("TR")
-        console.log('window[c]:',window[c])
-        window[c].style = "background: url('assets/transparent.png');"
-      }
-    })
-  } else { alert("something went wrong")}
+function get(thing, colors, requests, resultsObj){
+  const request = {
+    thing: thing || thingInput.value,
+    colors: colors || colorsInput.value,
+    requests: requests || requestsInput.value
+  }
+  const urlString = _URL+thing+"/"+colors
+  turnOnLoader()
+  fetch(urlString)
+    .then( res => res.json())
+    .then( data => handleColors(data, request, resultsObj))
+    .finally( ()=> turnOffLoader(resultsObj) )
+}
+
+function handleColors(
+  { validOutputs, colorObjectArray },
+  { thing, colors, requests }, 
+  resultsObj
+) {
+  resultsObj = trackResults(validOutputs, resultsObj)
+  if (resultsObj.requestCnt < requests) {
+    get(thing, colors, requests, resultsObj)
+  } else {
+    loaderOn = false
+  }
+  if (resultsObj.requestCnt == 1) { colorNames.innerHTML = "" }
+  displayColors(resultsObj, colorObjectArray)
+  console.log('resultsObj:',resultsObj)
+}
+
+function trackResults(validOutputs, resultsObj) {
+  if (!resultsObj) { resultsObj = { colors: {}, requestCnt: 0 } }
+  resultsObj.toAdd = []
+  resultsObj.requestCnt++
+  validOutputs.forEach(c=>{
+    if (!resultsObj.colors[c]) {
+      resultsObj.colors[c] = 1
+      resultsObj.toAdd.push(c)
+    } else {
+      resultsObj.colors[c]++
+    }
+  })
+  return resultsObj
+}
+
+function displayColors(resultsObj, colorObjectArray) {
+  resultsObj.toAdd.forEach(c=>{
+    let rgb = colorObjectArray.filter(o=>o.name === c)[0]?.rgb
+    colorNames.innerHTML += /*html*/`
+      <div class="colorCircleContainer">
+        <div class='colorName'>${c}</div>
+        <div 
+          class='colorCircle' id="${c}" 
+          style="background-color: ${rgb || ''};"
+        ></div>
+      </div>
+    `
+    if (!rgb && c === "transparent") {
+      window[c].style = "background: url('assets/transparent.png');"
+    }
+  })
+}
+
+
+// 🟢... 🟡... 🔴...  LOADER
+function turnOnLoader() {
+  loaderOn = true
+  loader.innerHTML = "...Loading"
+}
+
+function turnOffLoader() {
+  if (!loaderOn) {
+    loader.innerHTML = ""
+  }
 }
