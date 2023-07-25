@@ -32,7 +32,8 @@ function get(thing, colors, requests, resultsObj){
     colors: colors || colorsInput.value,
     requests: requests || requestsInput.value
   }
-  const urlString = _URL+thing+"/"+colors
+  console.log('request:',request)
+  const urlString = _URL+request.thing+"/"+request.colors
   turnOnLoader()
   fetch(urlString)
     .then( res => res.json())
