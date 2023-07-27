@@ -38,7 +38,8 @@ function get(thing, colors, requests, resultsObj){
   fetch(urlString)
     .then( res => res.json())
     .then( data => handleColors(data, request, resultsObj))
-    .finally( ()=> turnOffLoader(resultsObj) )
+    .catch( error => { loaderOn = false; turnOffLoader(); } )
+    .finally( ()=> turnOffLoader() )
 }
 
 function handleColors(
