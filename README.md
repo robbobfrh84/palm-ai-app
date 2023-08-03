@@ -1,12 +1,14 @@
 # 🏝️ palm-ai-app 🎨
 An application built using the PaLM API, the App is a fun color generator game that associates "Things" with "colors" by utilizing a trained AI Large Language Model to generate responses. 
 
+
+
 ##### Live Links 🎙️
 
 - Front-end Web Application: https://robbobfrh84.github.io/palm-ai-app/
 - Server: https://palm-ai-app.uw.r.appspot.com/
 
-##### Code served from 🏡
+##### Where Code is Hosted🍦
 
 - Front End Web App from this repo on GitHub: https://github.com/robbobfrh84/palm-ai-app
 - Back End API on Google Cloud Developer's App Engine: https://console.cloud.google.com/home/dashboard?project=palm-ai-app
@@ -37,7 +39,7 @@ This project uses Google App Engine. I wrote this [blog post](https://medium.com
 
 ##### Deploying Front End 
 
-This app is setup to deploy from the `client` subfolder. And, the branch `gh-pages` was made to handle that. So pushing to the main branch **will not** deploy changes to the front end. You'll need to run this command to do that. Which will trigger Github's actions to update your code and deploy the changes.
+This app is setup to deploy from the `client` subfolder. And, the branch `gh-pages` was made to handle that. So pushing to the main branch **will not** deploy changes to the front end. You'll need to run this command to do that. Which will trigger Github's actions to update your code and deploy the changes.
 
 - `git subtree push --prefix client origin gh-pages`
   - Live URL:  https://robbobfrh84.github.io/palm-ai-app/
@@ -56,7 +58,7 @@ This app is setup to deploy from the `client` subfolder. And, the branch `gh-pag
 
 ### Mac OS Command-line test commands
 You can add a string after `npm start` to force a specific input and join words with `-` to be more specfic...
-- Example: `node app/test.js bear`
+- Example: `node app/test.js bear`
 
 - Example: `node app/test.js polar-bear`
 
