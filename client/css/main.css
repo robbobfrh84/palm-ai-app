@@ -1,0 +1,84 @@
+/* ⛺️ Base Levels ⛺️*/
+* {
+  font-size: var(--root-font-size); 
+  color: var(--themeB); 
+  font-family: Avenir, sans-serif;
+  transition: color .5s;
+}
+body {
+  background-color: var(--themeA);
+  margin: 0;
+  opacity: 0;
+  transition: background-color .5s, opacity .5s;
+}
+#mainBody {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 48rem;
+  min-height: 100vh;
+}
+/* sections */
+#navBar {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0,0,0,0.15); /* 🔥 Temp */
+  height: 2rem;
+  padding: .5rem;
+}
+#content {
+  flex: 1 0 auto;
+  margin-top: 1rem;
+  padding: .5rem;
+  background-color: rgba(0,0,0,0.15); /* 🔥 Temp */
+  text-align: center;
+}
+#footer {
+  flex-shrink: 0;
+  margin-top: 1rem;
+  padding: .5rem;
+  background-color: rgba(0,0,0,0.15); /* 🔥 Temp */
+}
+
+/* 🎩 Nav Bar 🎩 */
+#navBar > nav {
+  display: inline-block;
+}
+#title {
+  /* margin-left: 1rem; */
+}
+#topRightNav {
+  margin-left: auto;
+  /* margin-right: 1rem; */
+}
+
+
+/* - - - 🗳️ Input 🗳️ - - - */
+.inputContainer {
+  text-align: center;
+}
+#thingInput {
+  padding: .5rem;
+}
+
+
+
+/* 🔴🟢🔵 Color Results 🔵🟢🔴 */
+.colorCircleContainer {
+  display: inline-block;
+  margin: 0.5rem;
+  background-color: rgba(0,0,0,0.15);
+}
+.colorName, .colorCircle {
+  width: 6rem;
+}
+.colorName {
+  text-align: center;
+}
+.colorCircle {
+  height: 6rem;
+  border-radius: 50%;
+}
+
+/* 🌒🌓🌔 LIGTH DARK TOGGLE 🌖🌗🌘 */
+/* 🎨⚾️ All Color balls ⚾️🎨 */

@@ -1,0 +1,9 @@
+:root {
+  --root-font-size: 16px;
+
+  /* COLORS */
+  --light:  rgb(255,248,248); 
+  --dark: rgb(33,12,5); 
+  --themeA: var(--light);
+  --themeB: var(--dark);
+}

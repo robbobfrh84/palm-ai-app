@@ -2,16 +2,17 @@
 An application built using the PaLM API, the App is a fun color generator game that associates "Things" with "colors" by utilizing a trained AI Large Language Model to generate responses. 
 
 
-
 ##### Live Links 🎙️
 
 - Front-end Web Application: https://robbobfrh84.github.io/palm-ai-app/
 - Server: https://palm-ai-app.uw.r.appspot.com/
 
-##### Where Code is Hosted🍦
+##### Where Code is Hosted 🍦
 
 - Front End Web App from this repo on GitHub: https://github.com/robbobfrh84/palm-ai-app
 - Back End API on Google Cloud Developer's App Engine: https://console.cloud.google.com/home/dashboard?project=palm-ai-app
+
+----
 
 # 🏗️ Development 🏗️
 ##### Setting Up & Adding Dependancies:
@@ -32,7 +33,8 @@ An application built using the PaLM API, the App is a fun color generator game t
 
 NOTE: the default API url is `http://localhost:8080/`. If you'd like to use the production API url, add `#prod` to your **client** url. 
 - For example: `http://127.0.0.1:5500/#prod`
-  
+
+----
 
 # 🚀 Deployment 🚀
 This project uses Google App Engine. I wrote this [blog post](https://medium.com/@bobmain49/node-js-app-engine-with-google-cli-getting-started-guide-2023-556a4805cebd) about setting that up. Also, see this [blog post](https://medium.com/@bobmain49/dealing-with-sh-gcloud-command-not-found-after-setting-up-gcloud-cli-5e11b9290e6) if you're having issues with the `gcloud` command not being found. Once that's set up all you'll need to do is run these commands to deploy. 
@@ -53,6 +55,8 @@ This app is setup to deploy from the `client` subfolder. And, the branch `gh-pag
 - Then, you can run `gcloud app browse` to open the root url in a browser window.
 - And, you can even watch the live logs with `gcloud app logs tail -s default`
 
+----
+
 
 # 🥽 Tests 🧪 
 
@@ -62,7 +66,6 @@ You can add a string after `npm start` to force a specific input and join words 
 
 - Example: `node app/test.js polar-bear`
 
-  
 
 ----
 

@@ -1,10 +1,16 @@
+// 🚨 IMPORTANT 🚨 🚨 🚨
+// This file was copied AS IS from /server/app/colors.js to /cliient/js/colors.js
+// If there are any changes, please reference them HERE and THERE!
+// - module.exports is removed from the bottom in client copy 
+
 const validOthers = "transparent"
 
 // * How to get validColors: console.log('htmlColors:', htmlColors.map(c=>c.name).join(', '))
 const validColors = validOthers + ", " + "black, silver, gray, white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, teal, aqua, orange, aliceblue, antiquewhite, aquamarine, azure, beige, bisque, blanchedalmond, blueviolet, brown, burlywood, cadetblue, chartreuse, chocolate, coral, cornflowerblue, cornsilk, crimson, cyan, darkblue, darkcyan, darkgoldenrod, darkgray, darkgreen, darkkhaki, darkmagenta, darkolivegreen, darkorange, darkorchid, darkred, darksalmon, darkseagreen, darkslateblue, darkslategray, darkturquoise, darkviolet, deeppink, deepskyblue, dimgray, dodgerblue, firebrick, floralwhite, forestgreen, gainsboro, ghostwhite, gold, goldenrod, greenyellow, honeydew, hotpink, indianred, indigo, ivory, khaki, lavender, lavenderblush, lawngreen, lemonchiffon, lightblue, lightcoral, lightcyan, lightgoldenrodyellow, lightgray, lightgreen, lightpink, lightsalmon, lightseagreen, lightskyblue, lightslategray, lightsteelblue, lightyellow, limegreen, linen, magenta, mediumaquamarine, mediumblue, mediumorchid, mediumpurple, mediumseagreen, mediumslateblue, mediumspringgreen, mediumturquoise, mediumvioletred, midnightblue, mintcream, mistyrose, moccasin, navajowhite, oldlace, olivedrab, orangered, orchid, palegoldenrod, palegreen, paleturquoise, palevioletred, papayawhip, peachpuff, peru, pink, plum, powderblue, rosybrown, royalblue, saddlebrown, salmon, sandybrown, seagreen, seashell, sienna, skyblue, slateblue, slategray, snow, springgreen, steelblue, tan, thistle, tomato, turquoise, violet, wheat, whitesmoke, yellowgreen, rebeccapurple"
 
-//👀 NOTE! you'll see several gray colors noted out. 
+//👀 NOTE! you'll see several grey colors noted out. 
 // That's because they're the same color, just two different selling of each "gray"/"grey"
+// - We're using gray with an 'a'. 
 // KEEP THEM NOTED OUT! It could result in both colors being returned with the same value...
 const htmlColors = [
   {
