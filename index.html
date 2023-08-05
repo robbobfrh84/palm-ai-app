@@ -3,41 +3,51 @@
 <!-- <link rel='icon' href='link/or/path'>  -->
 <head>
   <meta charset='UTF-8'><meta http-equiv='X-UA-Compatible' content='ie=edge'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <link rel='stylesheet' href='main.css'>
+  <meta name='viewport' content='width=device-width, initial-scale=0.5'>
+  <link rel='stylesheet' href='css/main.css'>
+  <link rel='stylesheet' href='css/vars.css'>
 </head> 
 
 
 <body>
-  
-  <h1> Color A.I. </h1>
+  <div id="mainBody">
 
-  <div class="label">Thing:</div>
-  <input id="thingInput" placeholder="...input a thing (example: cat, or Calico Cat)">
-  <br>
-  <div class="label">Min. colors try:</div>
-  <input class="number" id="colorsInput" value="6" >
-  <br>
-  <div class="label">Min. requests try:</div>
-  <input class="number" id="requestsInput" value="2" >
+    <section id="navBar">
+      <nav id="title">Color A.I.</nav>
+      <nav id="topRightNav">
+        <input type="checkbox" id="lightDarkToggle">
+      </nav>
+    </section>
 
-  <hr>
-  <button onclick="UIGet()">Enter</button>
-  Tests >
-  <button onclick="UIGet('usa',6,2)">*usa,6,2</button>
-  <button onclick="UIGet('cat',6,2)">*cat,6,2</button>
-  <button onclick="UIGet('pig',6,2)">*pig,6,2</button>
-  <button onclick="UIGet('cow',6,2)">*cow,6,2</button>
-  <button onclick="UIGet('bird',6,2)">*bird,6,2</button>
-  <button onclick="UIGet('rainbow',6,2)">*rainbow,6,2</button>
+    <section id="content">
+      <div class="inputContainer">
+        <input id="thingInput" placeholder="...input a thing (example: cat, or Calico Cat)">
+      </div>
+      <div id="colorsResult"></div>
+      <div id="loader" style="background-color: rgba(0,0,0,0.15)"></div>
+    </section>
 
-  <hr>
+    <section id="footer">
+      <div>
+        <button onclick="get()">Enter</button>
+        Tests >
+        <button onclick="get('usa')">usa</button>
+        <button onclick="get('cat')">cat</button>
+        <button onclick="get('pig')">pig</button>
+        <button onclick="get('cow')">cow</button>
+        <button onclick="get('bird')">bird</button>
+        <button onclick="get('rainbow')">rainbow</button>
+        <button onclick="get('glass')">glass</button>
+      </div>
+    </section>
 
-  <div id="colorNames"></div>
-  <div id="colorBlock"></div>
-
-  <div id="loader"></div>
-
+  </div>
 </body>
+
+
+<script src='js/colors.js'></script>
+<script src='js/toolkit.js'></script>
+<script src='js/loader.js'></script>
+<script src='js/colorsResults.js'></script>
 <script src='app.js'></script>
 </html>
