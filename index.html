@@ -3,9 +3,14 @@
 <!-- <link rel='icon' href='link/or/path'>  -->
 <head>
   <meta charset='UTF-8'><meta http-equiv='X-UA-Compatible' content='ie=edge'>
-  <meta name='viewport' content='width=device-width, initial-scale=0.5'>
+  <!-- <meta name='viewport' content='width=device-width, initial-scale=0.6'> -->
+  <!-- <meta name='viewport' content='width=device-width, initial-scale=1.0'> -->
+  <meta name="viewport" content="width=768, maximum-scale=1.0" />
+
   <link rel='stylesheet' href='css/main.css'>
   <link rel='stylesheet' href='css/vars.css'>
+  <link rel='stylesheet' href='css/mobile.css'>
+
 </head> 
 
 
@@ -15,21 +20,24 @@
     <section id="navBar">
       <nav id="title">Color A.I.</nav>
       <nav id="topRightNav">
-        <input type="checkbox" id="lightDarkToggle">
+        Examples
+        | Games
+        | <input type="checkbox" id="lightDarkToggle">
       </nav>
     </section>
 
     <section id="content">
       <div class="inputContainer">
-        <input id="thingInput" placeholder="...input a thing (example: cat, or Calico Cat)">
+        <input id="thingInput" placeholder="...example: 'cat' or 'Calico Cat'">
       </div>
+      <button class='btn' onclick="get()">Enter</button> 
+
       <div id="colorsResult"></div>
       <div id="loader" style="background-color: rgba(0,0,0,0.15)"></div>
     </section>
 
     <section id="footer">
       <div>
-        <button onclick="get()">Enter</button>
         Tests >
         <button onclick="get('usa')">usa</button>
         <button onclick="get('cat')">cat</button>

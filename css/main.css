@@ -35,6 +35,9 @@ body {
 }
 #footer {
   flex-shrink: 0;
+  position: relative;
+  left: 0;
+  bottom: 0;
   margin-top: 1rem;
   padding: .5rem;
   background-color: rgba(0,0,0,0.15); /* 🔥 Temp */
@@ -45,28 +48,34 @@ body {
   display: inline-block;
 }
 #title {
-  /* margin-left: 1rem; */
+  margin-left: 1rem;
 }
 #topRightNav {
   margin-left: auto;
-  /* margin-right: 1rem; */
+  margin-right: 1rem;
+}
+#lightDarkToggle {
+  width: 1rem;
+  height: 1rem;
 }
 
-
-/* - - - 🗳️ Input 🗳️ - - - */
+/* - - - 🗳️ Input & Enter 🗳️ - - - */
 .inputContainer {
   text-align: center;
 }
 #thingInput {
+  width: 75%;
+  box-sizing: border-box;
   padding: .5rem;
 }
-
-
+.btn {
+  margin: 1rem;
+}
 
 /* 🔴🟢🔵 Color Results 🔵🟢🔴 */
 .colorCircleContainer {
   display: inline-block;
-  margin: 0.5rem;
+  margin: .5rem;
   background-color: rgba(0,0,0,0.15);
 }
 .colorName, .colorCircle {
