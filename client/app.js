@@ -10,11 +10,11 @@ window.onload = ()=>{
   if ( clientURL === "https://robbobfrh84.github.io/palm-ai-app/" || hash === "#prod") {
     _URL = "https://palm-ai-app.uw.r.appspot.com/"
   }
-  thingInput.focus()
+  // thingInput.focus()
 }
 
 window.reload = ()=>{
-  thingInput.focus()
+  // thingInput.focus()
 }
 
 document.body.addEventListener("keypress", function(event) {
@@ -55,10 +55,10 @@ function get(thing, resultsObj){
   fetch(urlString)
     .then( res => res.json())
     .then( data => handleColors(data, request, resultsObj))
-    // .catch( error => { 
-    //   _loaderOn = false
-    //   turnOffLoader()
-    //   console.log('🚨 error:', error) // * error needs to log to show any code error after this point. 
-    // }) 
-    // .finally( ()=> turnOffLoader() )
+    .catch( error => { 
+      _loaderOn = false
+      turnOffLoader()
+      console.log('🚨 error:', error) // * error needs to log to show any code error after this point. 
+    }) 
+    // .finally( ()=> ... )
 }

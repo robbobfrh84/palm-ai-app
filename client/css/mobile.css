@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+  * {
+    font-size: 32px;
+  }
+  body {
+    width: 100%; /* * don't change unless to fix!*/
+  }
+  #mainBody {
+    width: 100%; /* * don't change unless to fix!*/
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+  .btn {
+    font-size: 48px;
+  }
+}
