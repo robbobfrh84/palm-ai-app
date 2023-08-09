@@ -1,7 +1,7 @@
 // 🟢... 🟡... 🔴...  LOADER
 function turnOnLoader() {
   _loaderOn = true
-  loader.innerHTML = "...Loading"
+  loader.innerHTML = "&nbsp; &nbsp; ...Loading"
 }
 
 function turnOffLoader() {

@@ -5,10 +5,14 @@
   --mainBodyWidth: 48rem;
 
   /* COLORS */
-  --light:  rgb(255,248,248); 
-  --dark: rgb(33,12,5); 
+  --light:  #FAF9F9; /* 🔥 Don't quite match hash color of bg */
+  --dark: #1C1814; /* 🔥 Don't quite match hash color of bg */
   --themeA: var(--light);
   --themeB: var(--dark);
+  --light-bg: url('../assets/light-grain.png'); /* https://bg.siteorigin.com/?color=%23FAF9F9&pattern=beige_paper&blend=3&intensity=13&noise=0&invert=0&2x=0 */
+  --dark-bg: url('../assets/dark-grain.png'); /* https://bg.siteorigin.com/?color=%231C1814&pattern=beige_paper&blend=3&intensity=13&noise=0&invert=0&2x=0 */
+  --themeA-bg: var(--light-bg);
+  --themeB-bg: var(--dark-bg);
 
   /* RESULT COLOR & TRANSITIONS */
   --resultColorWidth: 6rem; 
