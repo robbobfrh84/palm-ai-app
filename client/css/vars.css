@@ -1,9 +1,24 @@
 :root {
+
   --root-font-size: 16px;
+  --pageTansition: 1s;
+  --mainBodyWidth: 48rem;
 
   /* COLORS */
   --light:  rgb(255,248,248); 
   --dark: rgb(33,12,5); 
   --themeA: var(--light);
   --themeB: var(--dark);
+
+  /* RESULT COLOR & TRANSITIONS */
+  --resultColorWidth: 6rem; 
+  --resultColorBoxShadow: 0px 0px 4px 2px rgba(0,0,0,0.15);
+  --resultColorMargin: 0.5rem;
+  --resultColorTransparent: url('assets/transparent.png');
+  --resultColorTransition: 1s;
+
+  /* MOBILE */
+  --rootFontSize: 32px;
+  --inputFontSize: 34px; /* NOTE: less than 34 make it "zoom" on inputs.  */
+
 }

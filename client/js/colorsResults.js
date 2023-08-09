@@ -2,7 +2,7 @@ function handleColors({ validOutputs, colorObjectArray }, req, resultsObj) {
   resultsObj = trackResults(validOutputs, colorObjectArray, req, resultsObj)
 
   if (resultsObj.requestCnt < req.requests) {
-    get(req.thing, resultsObj)
+    get(req.thing, resultsObj, true)
   } else {
     _loaderOn = false
   }
@@ -16,7 +16,8 @@ function trackResults(validOutputs, colorObjectArray, req, resultsObj) {
       req: req,
       colors: {}, 
       requestCnt: 0, 
-      _lastDelay: 0 // This trackets manual delay so 2nd + requests don't jump line. 
+      lastDelay: 0,
+      requestDelay: Date.now()
     } 
   }
   resultsObj.toAdd = []
@@ -33,36 +34,57 @@ function trackResults(validOutputs, colorObjectArray, req, resultsObj) {
   return resultsObj
 }
 
-function displayColors(resultsObj) {
-  resultsObj.toAdd.forEach( (c, i) =>{
-    const requestCnt = resultsObj.requestCnt 
-    const delay = resultsObj._lastDelay
-    resultsObj._lastDelay += random(100,750)
-    let rowBreak = (c.rank - 1) % 3 === 0 ? "<br>" : ""
-    rowBreak = c.rank === 1 ? "" : rowBreak
+function displayColors(resultsObj) { // * So, this was pretty tricky to get the loader to turn off at the right time. Often it would be too soon as we had fake delays. 
+  const requestCnt = resultsObj.requestCnt 
+
+  resultsObj.requestDelay = Date.now() - resultsObj.requestDelay
+  const reqDelay = resultsObj.requestDelay
+  resultsObj.requestDelay = Date.now()
+  resultsObj.lastDelay -= reqDelay
+
+  resultsObj.toAdd.forEach( c =>{
+    const randomDelay = c.rank == 1 ? 0 : random(200,750)
+    resultsObj.lastDelay += randomDelay
+    const delay = resultsObj.lastDelay
+    buildHTML(c)
+
+    const name = c.name
+    const resultColorWidth = getComputedStyle(document.documentElement).getPropertyValue('--resultColorWidth')
+    const resultColorBoxShadow = getComputedStyle(document.documentElement).getPropertyValue('--resultColorBoxShadow')
+    const resultColorMargin = getComputedStyle(document.documentElement).getPropertyValue('--resultColorMargin')
+
     setTimeout(()=>{
-      colorsResult.innerHTML += /*html*/`
-        ${rowBreak}
-        <div class="colorCircleContainer">
-          <div class='colorName'>${c.name}</div>
-          <div 
-            class='colorCircle' id="${c.name}" 
-            style="background-color: ${c.rgb || ''};"
-          ></div>
-        </div>
-      `
-      if (!c.rgb && c.name === "transparent") {
-        window[c.name].style = "background: url('assets/transparent.png');"
-      }
-
-      if ( // * Checking if this is the last one, so we can turn of loader (yes, it's this complicated)
-        requestCnt >= _req_config.requests 
-        && c.rank >= (Object.keys(resultsObj.colors).length )
-      ) {
-        setTimeout(()=>{ turnOffLoader() },300 )
-      }
-
+      window["color-"+name].style.width = resultColorWidth 
+      window["color-"+name].style.height = resultColorWidth
+      window["color-"+name].style.boxShadow =  resultColorBoxShadow 
+      window["color-"+name].parentElement.style.margin = resultColorMargin
+      window["color-"+name].style.marginTop = "0rem"
     }, delay)
-
   })
+
+  checkLoaderOff(requestCnt, resultsObj.lastDelay)
+
+}
+
+function buildHTML(c){
+  let rowBreak = (c.rank !== 1 && (c.rank - 1) % 3 === 0) ? true : false
+  if (rowBreak) {
+    colorsResult.appendChild(document.createElement("br"))
+  }
+
+  const containerElm = document.createElement('div')
+  containerElm.classList.add('colorCircleContainer')
+
+  const colorElm = document.createElement('div')
+  colorElm.classList.add('colorCircle')
+  colorElm.id = "color-"+c.name
+
+  colorElm.style.backgroundColor = c.rgb || ''
+  if (!c.rgb && c.name === "transparent") {
+    const resultColorTransparent = getComputedStyle(document.documentElement).getPropertyValue('--resultColorTransparent')
+    colorElm.style.backgroundImage =resultColorTransparent
+  } 
+
+  containerElm.appendChild(colorElm)
+  colorsResult.appendChild(containerElm)
 }

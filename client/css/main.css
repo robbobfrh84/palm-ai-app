@@ -3,26 +3,30 @@
   font-size: var(--root-font-size); 
   color: var(--themeB); 
   font-family: Avenir, sans-serif;
-  transition: color .5s;
+  transition: color var(--pageTansition); 
 }
 body {
   background-color: var(--themeA);
   margin: 0;
   opacity: 0;
-  transition: background-color .5s, opacity .5s;
+  transition: background-color var(--pageTansition), opacity var(--pageTansition);
 }
 #mainBody {
   display: flex;
   flex-direction: column;
   margin: auto;
-  width: 48rem;
+  width: var(--mainBodyWidth); 
   min-height: 100vh;
 }
+
 /* sections */
 #navBar {
   display: flex;
   align-items: center;
-  background-color: rgba(0,0,0,0.15); /* 🔥 Temp */
+
+  /* 🔥 Temp */
+  background-color: rgba(0,0,0,0.15); 
+
   height: 2rem;
   padding: .5rem;
 }
@@ -30,7 +34,10 @@ body {
   flex: 1 0 auto;
   margin-top: 1rem;
   padding: .5rem;
-  background-color: rgba(0,0,0,0.15); /* 🔥 Temp */
+
+  /* 🔥 Temp */
+  background-color: rgba(0,0,0,0.15); 
+  
   text-align: center;
 }
 #footer {
@@ -40,7 +47,9 @@ body {
   bottom: 0;
   margin-top: 1rem;
   padding: .5rem;
-  background-color: rgba(0,0,0,0.15); /* 🔥 Temp */
+
+  /* 🔥 Temp */
+  background-color: rgba(0,0,0,0.15);
 }
 
 /* 🎩 Nav Bar 🎩 */
@@ -64,7 +73,9 @@ body {
   text-align: center;
 }
 #thingInput {
+  /* 🔥 Temp */
   width: 75%;
+  
   box-sizing: border-box;
   padding: .5rem;
 }
@@ -73,20 +84,33 @@ body {
 }
 
 /* 🔴🟢🔵 Color Results 🔵🟢🔴 */
+#colorsResult {
+  font-size: 0px;
+}
 .colorCircleContainer {
   display: inline-block;
-  margin: .5rem;
-  background-color: rgba(0,0,0,0.15);
+  height: var(--resultColorWidth);
+  margin: 0;
+  transition: margin var(--resultColorTransition);
 }
-.colorName, .colorCircle {
-  width: 6rem;
-}
-.colorName {
+/* .colorName {
+  font-size: 1rem;
   text-align: center;
-}
+} */
 .colorCircle {
-  height: 6rem;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  margin-top: calc(var(--resultColorWidth) / 2);
+  margin-bottom: 0;
   border-radius: 50%;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+  transition: 
+    width var(--resultColorTransition), 
+    height var(--resultColorTransition), 
+    margin-top var(--resultColorTransition), 
+    box-shadow var(--resultColorTransition);
 }
 
 /* 🌒🌓🌔 LIGTH DARK TOGGLE 🌖🌗🌘 */

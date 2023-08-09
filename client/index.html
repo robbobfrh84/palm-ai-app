@@ -3,14 +3,11 @@
 <!-- <link rel='icon' href='link/or/path'>  -->
 <head>
   <meta charset='UTF-8'><meta http-equiv='X-UA-Compatible' content='ie=edge'>
-  <!-- <meta name='viewport' content='width=device-width, initial-scale=0.6'> -->
-  <!-- <meta name='viewport' content='width=device-width, initial-scale=1.0'> -->
-  <meta name="viewport" content="width=768, maximum-scale=1.0" />
+  <meta name="viewport" content="width=768, maximum-scale=1.0" />  
 
   <link rel='stylesheet' href='css/main.css'>
   <link rel='stylesheet' href='css/vars.css'>
   <link rel='stylesheet' href='css/mobile.css'>
-
 </head> 
 
 
@@ -30,10 +27,9 @@
       <div class="inputContainer">
         <input id="thingInput" placeholder="...example: 'cat' or 'Calico Cat'">
       </div>
-      <button class='btn' onclick="get()">Enter</button> 
-
+      <button id="enterButton" class='btn' onclick="get()" >Enter</button> 
+      <div id="loader" style="background-color: rgba(0,0,0,0.15); min-height: 2rem;"></div>
       <div id="colorsResult"></div>
-      <div id="loader" style="background-color: rgba(0,0,0,0.15)"></div>
     </section>
 
     <section id="footer">
@@ -46,6 +42,7 @@
         <button onclick="get('bird')">bird</button>
         <button onclick="get('rainbow')">rainbow</button>
         <button onclick="get('glass')">glass</button>
+        <button onclick="get('summer')">summer</button>
       </div>
     </section>
 
