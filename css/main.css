@@ -6,10 +6,14 @@
   transition: color var(--pageTansition); 
 }
 body {
-  background-color: var(--themeA);
+  /* background-color: var(--themeA); */
+  background-image: var(--themeA-bg);
   margin: 0;
   opacity: 0;
-  transition: background-color var(--pageTansition), opacity var(--pageTansition);
+  transition: 
+    background-image var(--pageTansition), 
+    background-color var(--pageTansition), 
+    opacity var(--pageTansition);
 }
 #mainBody {
   display: flex;
@@ -17,6 +21,10 @@ body {
   margin: auto;
   width: var(--mainBodyWidth); 
   min-height: 100vh;
+}
+.btn {
+  margin: 1rem;
+  background-color: var(--themeA);
 }
 
 /* sections */
@@ -36,7 +44,7 @@ body {
   padding: .5rem;
 
   /* 🔥 Temp */
-  background-color: rgba(0,0,0,0.15); 
+  /* background-color: rgba(0,0,0,0.15);  */
   
   text-align: center;
 }
@@ -75,13 +83,13 @@ body {
 #thingInput {
   /* 🔥 Temp */
   width: 75%;
+  background-color: var(--themeA);
+  color: var(--themeB);
   
   box-sizing: border-box;
   padding: .5rem;
 }
-.btn {
-  margin: 1rem;
-}
+
 
 /* 🔴🟢🔵 Color Results 🔵🟢🔴 */
 #colorsResult {

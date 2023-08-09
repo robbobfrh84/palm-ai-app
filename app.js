@@ -31,6 +31,8 @@ lightDarkToggle.onchange = ()=>{
   const themeB = _theme
   document.documentElement.style.setProperty('--themeA', 'var(--'+themeB+')');
   document.documentElement.style.setProperty('--themeB', 'var(--'+themeA+')');
+  document.documentElement.style.setProperty('--themeA-bg', 'var(--'+themeB+'-bg)');
+  document.documentElement.style.setProperty('--themeB-bg', 'var(--'+themeA+'-bg)');
 }
 
 function checkLoaderOff(requestCnt, lastDelay) {

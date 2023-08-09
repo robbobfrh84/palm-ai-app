@@ -16,6 +16,9 @@
 
     <section id="navBar">
       <nav id="title">Color A.I.</nav>
+      <nav>      
+        <div id="loader"></div>
+      </nav>
       <nav id="topRightNav">
         Examples
         | Games
@@ -28,21 +31,20 @@
         <input id="thingInput" placeholder="...example: 'cat' or 'Calico Cat'">
       </div>
       <button id="enterButton" class='btn' onclick="get()" >Enter</button> 
-      <div id="loader" style="background-color: rgba(0,0,0,0.15); min-height: 2rem;"></div>
       <div id="colorsResult"></div>
     </section>
 
     <section id="footer">
       <div>
         Tests >
-        <button onclick="get('usa')">usa</button>
-        <button onclick="get('cat')">cat</button>
-        <button onclick="get('pig')">pig</button>
-        <button onclick="get('cow')">cow</button>
-        <button onclick="get('bird')">bird</button>
-        <button onclick="get('rainbow')">rainbow</button>
-        <button onclick="get('glass')">glass</button>
-        <button onclick="get('summer')">summer</button>
+        <button class="btn" onclick="get('usa')">usa</button>
+        <button class="btn" onclick="get('cat')">cat</button>
+        <button class="btn" onclick="get('pig')">pig</button>
+        <button class="btn" onclick="get('cow')">cow</button>
+        <button class="btn" onclick="get('bird')">bird</button>
+        <button class="btn" onclick="get('rainbow')">rainbow</button>
+        <button class="btn" onclick="get('glass')">glass</button>
+        <button class="btn" onclick="get('summer')">summer</button>
       </div>
     </section>
 
