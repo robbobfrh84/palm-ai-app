@@ -10,7 +10,7 @@ window.onload = ()=>{
   const clientURL = window.location.origin + window.location.pathname
   if ( 
     clientURL === "https://robbobfrh84.github.io/palm-ai-app/" 
-    || clientURL === "https://colorai.farm" 
+    || clientURL === "https://colorai.farm/" 
     || hash === "#prod") 
   {
     _URL = "https://palm-ai-app.uw.r.appspot.com/"
