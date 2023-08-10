@@ -8,7 +8,11 @@ window.onload = ()=>{
   document.body.style.opacity = 1
   const hash = window.location.hash
   const clientURL = window.location.origin + window.location.pathname
-  if ( clientURL === "https://robbobfrh84.github.io/palm-ai-app/" || hash === "#prod") {
+  if ( 
+    clientURL === "https://robbobfrh84.github.io/palm-ai-app/" 
+    || clientURL === "https://colorai.farm" 
+    || hash === "#prod") 
+  {
     _URL = "https://palm-ai-app.uw.r.appspot.com/"
   }
   thingInput.focus()
