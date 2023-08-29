@@ -61,20 +61,26 @@ body {
 }
 
 /* 🎩 Nav Bar 🎩 */
-#navBar > nav {
-  display: inline-block;
-}
+/* #navBar > nav, #topRightNav > div {
+  display: inline-block; 
+} */
 #title {
   margin-left: 1rem;
 }
 #topRightNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: 1rem;
 }
-#lightDarkToggle {
+#topRightNav > div {
+  margin-left: 1rem;
+}
+/* #lightDarkToggle {
   width: 1rem;
   height: 1rem;
-}
+} */
 
 /* - - - 🗳️ Input & Enter 🗳️ - - - */
 .inputContainer {
