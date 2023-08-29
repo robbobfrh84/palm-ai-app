@@ -29,8 +29,7 @@ document.body.addEventListener("keypress", function(event) {
   } 
 })
 
-// lightDarkToggle.onchange = ()=>{
-function switchDarkLightMode() {
+function switchDarkLightTheme() {
   const themeA = _theme
   _theme = _theme === 'light' ? 'dark' : 'light'
   const themeB = _theme
@@ -38,7 +37,7 @@ function switchDarkLightMode() {
   document.documentElement.style.setProperty('--themeB', 'var(--'+themeA+')');
   document.documentElement.style.setProperty('--themeA-bg', 'var(--'+themeB+'-bg)');
   document.documentElement.style.setProperty('--themeB-bg', 'var(--'+themeA+'-bg)');
-  changeDayNight()
+  toggleLightDark()
 }
 
 function checkLoaderOff(requestCnt, lastDelay) {
@@ -81,41 +80,5 @@ function get(thing, resultsObj, keep){
         turnOffLoader()
         console.log('🚨 error:', error) // * error needs to log to show any code error after this point. 
       }) // * .finally( ()=> ... )
-  }
-}
-
-
-
-//
-//
-function changeDayNight() {
-
-  const width = getComputedStyle(document.documentElement).getPropertyValue('--width').split('px')[0]
-  const height = getComputedStyle(document.documentElement).getPropertyValue('--height').split('px')[0]
-
-  if (_theme === "dark") {
-    // setting = "night"
-    // document.body.style.background = 'url("assets/dark-grain.png")'; 
-    dayNight.style.backgroundColor = "rgba(120,139,227,0.25)"
-    dayNight.style.boxShadow = "inset 0px 0px 0px rgba(0,0,0,0.0)"
-
-    sun.style.left = (width - height + (height * 0.06))+'px'
-
-    moonImage.style.width = (0.8 * height)+'px'
-    moon.style.right = (0.05 * height)+'px'
-    moon.style.top = (-0.02 * height)+'px'
-    moon.style.opacity = '0.8'
-  } else {
-    // setting = "day"
-    // document.body.style.background = 'url("assets/light-grain.png")';
-    dayNight.style.backgroundColor = "rgba(0,0,0,0.2)"
-    dayNight.style.boxShadow = "inset 5px 5px 5px rgba(0,0,0,0.3)"
-
-    sun.style.left = (height * 0.08)+'px'
-
-    moonImage.style.width = (0.86 * height)+'px'
-    moon.style.right = (0.08 * height)+'px'
-    moon.style.top = '0.0px'
-    moon.style.opacity = '0.1'
   }
 }

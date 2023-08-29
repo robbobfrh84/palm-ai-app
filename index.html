@@ -5,11 +5,11 @@
   <meta charset='UTF-8'><meta http-equiv='X-UA-Compatible' content='ie=edge'>
   <!-- <meta name="viewport" content="width=768, maximum-scale=1.0" />   -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-
   <link rel='stylesheet' href='css/main.css'>
   <link rel='stylesheet' href='css/vars.css'>
   <link rel='stylesheet' href='css/mobile.css'>
+  <link rel='stylesheet' href='css/lightDark.css'>
+
 </head> 
 
 
@@ -17,14 +17,17 @@
   <div id="mainBody">
 
     <section id="navBar">
+
       <nav id="title">Color A.I.</nav>
+
       <nav>      
         <div id="loader"></div>
       </nav>
+
       <nav id="topRightNav">
         <div id="examplesButton"> Examples </div>
-        <!-- | <input type="checkbox" id="lightDarkToggle"> -->
-        <div id="dayNight" onclick="switchDarkLightMode()">
+
+        <div id="dayNight" onclick="switchDarkLightTheme()">
           <div id="sun" class='toggle'>
             <img src="assets/sun.png" alt="sun" class='toggle-images'>
           </div>
@@ -34,6 +37,9 @@
         </div>
       </nav>
     </section>
+    
+    <span id='navLine' class="divider"></span>
+
 
     <section id="content">
       <div class="inputContainer">
@@ -65,5 +71,6 @@
 <script src='js/toolkit.js'></script>
 <script src='js/loader.js'></script>
 <script src='js/colorsResults.js'></script>
+<script src='js/toggleLightDark.js'></script>
 <script src='app.js'></script>
 </html>
