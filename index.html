@@ -20,9 +20,16 @@
         <div id="loader"></div>
       </nav>
       <nav id="topRightNav">
-        Examples
-        | Games
-        | <input type="checkbox" id="lightDarkToggle">
+        <div id="examplesButton"> Examples </div>
+        <!-- | <input type="checkbox" id="lightDarkToggle"> -->
+        <div id="dayNight" onclick="switchDarkLightMode()">
+          <div id="sun" class='toggle'>
+            <img src="assets/sun.png" alt="sun" class='toggle-images'>
+          </div>
+          <div id="moon" class="toggle">
+            <img alt="moon" class='toggle-images' src="assets/moon.png"  id="moonImage">
+          </div>
+        </div>
       </nav>
     </section>
 

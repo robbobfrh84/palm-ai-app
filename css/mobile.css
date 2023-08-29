@@ -1,15 +1,15 @@
 @media (max-width: 768px) {
   * {
-    font-size: var(--rootFontSize);
+    font-size: var(--mobileRootFontSize);
   }
   body {
-    width: 100%; /* * don't change unless to fix!*/
+    width: 100%; /* * don't change creates weird padding-right gap !*/
   }
   input {
-    font-size: var(--inputFontSize);
+    font-size: var(--mobileInputFontSize);
   }
   #mainBody {
-    width: 100%; /* * don't change unless to fix!*/
+    width: 100%; /* * don't change creates weird padding-right gap !*/
     padding-left: .5rem;
     padding-right: .5rem;
   }

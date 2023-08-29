@@ -53,7 +53,6 @@ function displayColors(resultsObj) { // * So, this was pretty tricky to get the 
     const resultColorBoxShadow = getComputedStyle(document.documentElement).getPropertyValue('--resultColorBoxShadow')
     const resultColorMargin = getComputedStyle(document.documentElement).getPropertyValue('--resultColorMargin')
 
-    console.log('delay:',delay)
     setTimeout(()=>{
       window["color-"+name].style.width = resultColorWidth 
       window["color-"+name].style.height = resultColorWidth

@@ -1,8 +1,14 @@
 :root {
 
+  /* TOP LEVEL */
   --root-font-size: 16px;
-  --pageTansition: 1s;
+  /* --pageTansition: 1s; */
+  --pageTansition: 2s;
   --mainBodyWidth: 48rem;
+
+  /* MOBILE */
+  --mobileRootFontSize: 32px;
+  --mobileInputFontSize: 34px; /* NOTE: less than 34 make it "zoom" on inputs.  */
 
   /* COLORS */
   --light:  #FAF9F9; /* 🔥 Don't quite match hash color of bg */
@@ -16,13 +22,66 @@
 
   /* RESULT COLOR & TRANSITIONS */
   --resultColorWidth: 6rem; 
-  --resultColorBoxShadow: 0px 0px 4px 2px rgba(0,0,0,0.15);
+  --resultColorBoxShadow: 0px 0px 4px 2px rgba(0,0,0,0.5); 
   --resultColorMargin: 0.5rem;
   --resultColorTransparent: url('assets/transparent.png');
   --resultColorTransition: 1s;
 
-  /* MOBILE */
-  --rootFontSize: 32px;
-  --inputFontSize: 34px; /* NOTE: less than 34 make it "zoom" on inputs.  */
 
+
+
+
+
+  /* Toggle 🔥 find home*/
+  --width: 50px; 
+  --height: 25px; 
+  --delay: 2s; /* 🔥 should go up! */
+  --bg-delay: 4s; /* 🔥 should go up! */
+
+}
+
+/* body {
+  background: rgba(0,0,0,0);
+  width: 100%;
+  margin: 0px;
+  background: url("light.png");
+  transition: opacity var(--bg-delay), background var(--bg-delay);
+} */
+
+#dayNight {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  margin-top: 5px; /* 🔥 make this --global */
+  /* top: 50%;
+  left: 50%; */
+  /* -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: inset 5px 5px 5px rgba(0,0,0,0.3);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  border-radius: calc(var(--height));
+  height: var(--height);
+  width: var(--width);
+  transition: background-color var(--bg-delay), box-shadow var(--bg-delay);
+}
+.toggle {
+  position: relative;
+  display: inline-block;
+}
+.toggle-images {
+  padding-top: calc(0.075 * var(--height));
+  width: calc(0.86 * var(--height));
+  transition: width var(--delay);
+}
+#sun {
+  left: calc(0.08 * var(--height));
+  transition: left var(--delay);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+}
+#moon {
+  position: absolute;
+  right: calc(0.08 * var(--height));
+  opacity: 0.1;
+  transition: opacity var(--delay), top var(--delay), right var(--delay);
 }
