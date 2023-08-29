@@ -31,10 +31,8 @@ body {
 #navBar {
   display: flex;
   align-items: center;
-
   /* 🔥 Temp */
-  background-color: rgba(0,0,0,0.15); 
-
+  /* background-color: rgba(0,0,0,0.15);  */
   height: 2rem;
   padding: .5rem;
 }
@@ -42,10 +40,6 @@ body {
   flex: 1 0 auto;
   margin-top: 1rem;
   padding: .5rem;
-
-  /* 🔥 Temp */
-  /* background-color: rgba(0,0,0,0.15);  */
-  
   text-align: center;
 }
 #footer {
@@ -55,15 +49,10 @@ body {
   bottom: 0;
   margin-top: 1rem;
   padding: .5rem;
-
-  /* 🔥 Temp */
   background-color: rgba(0,0,0,0.15);
 }
 
-/* 🎩 Nav Bar 🎩 */
-/* #navBar > nav, #topRightNav > div {
-  display: inline-block; 
-} */
+/* 🎩 navBar 🎩 */
 #title {
   margin-left: 1rem;
 }
@@ -77,10 +66,15 @@ body {
 #topRightNav > div {
   margin-left: 1rem;
 }
-/* #lightDarkToggle {
-  width: 1rem;
-  height: 1rem;
-} */
+.divider {
+  box-shadow: inset 1px 5px 9px -6px rgba(0,0,0,1);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  display: block;
+  margin-top: 3px;
+  height: 6px;
+  width: 100%;
+}
 
 /* - - - 🗳️ Input & Enter 🗳️ - - - */
 .inputContainer {
@@ -127,5 +121,5 @@ body {
     box-shadow var(--resultColorTransition);
 }
 
-/* 🌒🌓🌔 LIGTH DARK TOGGLE 🌖🌗🌘 */
-/* 🎨⚾️ All Color balls ⚾️🎨 */
+
+

@@ -5,7 +5,7 @@ function getPromptString(thing, colors) {
   const examplesArray = [
     ["blood", "red"],
     ["grass", "green"],
-    ["sky", "blue, white, gray"],
+    ["sky", "blue, white, gray, transparent"],
     ["wood", "brown"],
     ["cloud", "white, transparent"],
     ["bee", "yellow, black, silver"],

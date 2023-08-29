@@ -1,0 +1,35 @@
+/* 🌒🌓🌔 Toggle Light Dark  🌖🌗🌘 */
+#dayNight {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  margin-top: 1px; 
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: inset 5px 5px 5px rgba(0,0,0,0.3);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  border-radius: calc(var(--height));
+  height: var(--height);
+  width: var(--width);
+  transition: background-color var(--toggleTransition), box-shadow var(--toggleTransition);
+}
+.toggle {
+  position: relative;
+  display: inline-block;
+}
+.toggle-images {
+  padding-top: calc(0.15 * var(--height));
+  width: calc(0.7 * var(--height));
+  transition: width var(--delay);
+}
+#sun {
+  left: calc(0.16 * var(--height));
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition: left var(--toggleTransition);
+}
+#moon {
+  position: absolute;
+  top: 0;
+  right: calc(0.16 * var(--height));
+  opacity: 0.1;
+  transition: opacity var(--toggleTransition), top var(--toggleTransition), right var(--toggleTransition);
+}
