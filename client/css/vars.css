@@ -1,16 +1,16 @@
 :root {
 
-  /* TOP LEVEL */
-  --root-font-size: 16px;
+  /* ⛺️ Base Levels ⛺️*/
+  --root-font-size: 16px; 
   /* --pageTansition: 1s; */
   --pageTansition: 2s;
   --mainBodyWidth: 48rem;
 
-  /* MOBILE */
-  --mobileRootFontSize: 32px;
-  --mobileInputFontSize: 34px; /* NOTE: less than 34 make it "zoom" on inputs.  */
+  /* Mobile */
+  --mobileRootFontSize: 16px;
+  /* --mobileInputFontSize: 34px; NOTE: less than 34 make it "zoom" on inputs.  */
 
-  /* COLORS */
+  /* Colors */
   --light:  #FAF9F9; /* 🔥 Don't quite match hash color of bg */
   --dark: #1C1814; /* 🔥 Don't quite match hash color of bg */
   --themeA: var(--light);
@@ -20,23 +20,19 @@
   --themeA-bg: var(--light-bg);
   --themeB-bg: var(--dark-bg);
 
-  /* RESULT COLOR & TRANSITIONS */
+  /* Result Colors & Transitioninng */
   --resultColorWidth: 6rem; 
   --resultColorBoxShadow: 0px 0px 4px 2px rgba(0,0,0,0.5); 
   --resultColorMargin: 0.5rem;
   --resultColorTransparent: url('assets/transparent.png');
   --resultColorTransition: 1s;
 
-
-
-
-
-
-  /* Toggle 🔥 find home*/
+  /* Toggle */
   --width: 50px; 
   --height: 25px; 
-  --delay: 2s; /* 🔥 should go up! */
-  --bg-delay: 4s; /* 🔥 should go up! */
+  --toggleTransition: 2s
+  /* --delay: 2s;  */
+  /* --bg-delay: 4s;  */
 
 }
 

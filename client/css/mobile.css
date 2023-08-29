@@ -10,8 +10,8 @@
   }
   #mainBody {
     width: 100%; /* * don't change creates weird padding-right gap !*/
-    padding-left: .5rem;
-    padding-right: .5rem;
+    /* padding-left: .5rem; */
+    /* padding-right: .5rem; */
   }
   .btn {
     font-size: 1.5rem; /* 🔥 Temp */
