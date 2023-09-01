@@ -2,6 +2,15 @@
   * {
     font-size: var(--mobileRootFontSize);
   }
+  #title {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+  }
+  #iconSvg {
+    width: 2.25rem;
+    top: -0.45rem;
+    left: 3rem;
+  }
   #inputContainer {
     width: 90%;
   }
