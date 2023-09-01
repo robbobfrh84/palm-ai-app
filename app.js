@@ -1,8 +1,8 @@
-const _URL = "http://localhost:8080/"
-const _req_config = { colors: 6, requests: 2 }
+let _URL = "http://localhost:8080/"
 let _theme = 'light'
 let _loaderOn = false
 let _requestInProgress = false
+const _req_config = { colors: 6, requests: 2 }
 
 const _showTests = false // * If true, will show tests and examples in the footer. 
 const _getHardCoded = false // * If true, you'll get an alert with a json object you can copy and paste into exampleTests.js. 
@@ -21,7 +21,7 @@ window.onload = ()=>{
   const clientURL = window.location.origin + window.location.pathname
   if ( 
     clientURL === "https://robbobfrh84.github.io/palm-ai-app/" 
-    || clientURL === "https://colorai.farm/" 
+    || clientURL === "https://colorai.farm/"
     || hash === "#prod") 
   {
     _URL = "https://palm-ai-app.uw.r.appspot.com/"
