@@ -1,0 +1,72 @@
+#loader1 {
+  position: absolute;
+  top: 1.25rem;
+  left: 0px;
+  right: 0px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+._loader-fullscreen-over {
+  /* position: absolute;
+  top: 0px; bottom: 0px; left: 0px; right: 0px;
+  background-color: rgba(0,0,0,0.5); */
+}
+._loader-centered {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* margin: auto; */
+}
+._loader-sLoader {
+  width: 175px;
+  /* height: 30px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  margin: auto;
+  /* background-color: rgba(0,0,0,0.1); */
+}
+._loader-sLoader > div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: cornflowerblue;
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translate3d(0, 40px, 0) scale(1.2, 0.85);
+  }
+  100% {
+    transform: translate3d(0, 0px, 0) scale(0.9, 1.1);
+  }
+}
+
+._loader-sLoader > div:nth-child(1) {
+  animation: bouncing 0.4s alternate infinite cubic-bezier(0.6, 0.05, 0.15, 0.95);
+  background-color: cornflowerblue;
+  opacity: 0.8;
+}
+._loader-sLoader > div:nth-child(2) {
+  animation: bouncing 0.4s 0.1s alternate infinite cubic-bezier(0.6, 0.05, 0.15, 0.95) backwards;
+  background-color: firebrick;
+  opacity: 0.8;
+}
+._loader-sLoader > div:nth-child(3) {
+  animation: bouncing 0.4s 0.2s alternate infinite cubic-bezier(0.6, 0.05, 0.15, 0.95) backwards;
+  background-color: green;
+  opacity: 0.8;
+}
+._loader-sLoader > div:nth-child(4) {
+  animation: bouncing 0.4s 0.3s alternate infinite cubic-bezier(0.6, 0.05, 0.15, 0.95) backwards;
+  background-color: darkgoldenrod;
+  opacity: 0.8;
+}
+._loader-sLoader > div:nth-child(5) {
+  animation: bouncing 0.4s 0.4s alternate infinite cubic-bezier(0.6, 0.05, 0.15, 0.95) backwards;
+  background-color: purple;
+  opacity: 0.8;
+}
+
