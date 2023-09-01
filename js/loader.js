@@ -4,8 +4,8 @@ function turnOnLoader() {
   loader.innerHTML = "&nbsp; &nbsp; ...Loading"
 }
 
-function turnOffLoader() {
-  if (!_loaderOn) {
+function turnOffLoader(check) {
+  if (!_loaderOn || !check) {
     loader.innerHTML = ""
   }
 }
