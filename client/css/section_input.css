@@ -45,6 +45,7 @@
 #falseInputText {
   display: inline-block;
   position: relative;
+  white-space: pre;
   left: 0.8rem; 
   font-size: 2rem; /* 🔥 👯‍♀️ needs to match & Global */
 }
