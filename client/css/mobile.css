@@ -2,18 +2,16 @@
   * {
     font-size: var(--mobileRootFontSize);
   }
-  body {
-    /* width: 100%;  */
-    /* * don't change creates weird padding-right gap !*/
+  #inputContainer {
+    width: 90%;
   }
   input {
     font-size: var(--mobileInputFontSize);
   }
   #mainBody {
     width: 100%; 
-    /* * don't change creates weird padding-right gap !*/
   }
-  .btn {
+  #enterButton {
     font-size: 1.5rem; /* 🔥 Temp */
   }
 }

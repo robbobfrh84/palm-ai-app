@@ -1,8 +1,19 @@
-let _URL = "http://localhost:8080/"
-let _loaderOn = false
+const _URL = "http://localhost:8080/"
+const _req_config = { colors: 6, requests: 2 }
 let _theme = 'light'
+let _loaderOn = false
 let _requestInProgress = false
-let _req_config = { colors: 6, requests: 2 }
+
+const _showTests = false // * If true, will show tests and examples in the footer. 
+const _getHardCoded = false // * If true, you'll get an alert with a json object you can copy and paste into exampleTests.js. 
+
+function getInitialVars() {
+  // window.highlightBorderOn = inputContainer.style.border
+  // window.highlightBorderOff = "0.2rem solid rgba(0,0,0,0)"
+
+  window.falseInputCursorLeft = falseInputCursor.style.left
+  window.falseInputCursorLeftTyped = "0.6rem"
+}
 
 window.onload = ()=>{
   document.body.style.opacity = 1
@@ -15,19 +26,10 @@ window.onload = ()=>{
   {
     _URL = "https://palm-ai-app.uw.r.appspot.com/"
   }
-  thingInput.focus()
+  getInitialVars()
+  buildTests()
+  real_input.focus()
 }
-
-window.reload = ()=>{
-  thingInput.focus()
-}
-
-document.body.addEventListener("keypress", function(event) {
-  if (event.key === "Enter" && thingInput.value != "") {
-    event.preventDefault()
-    get()
-  } 
-})
 
 function switchDarkLightTheme() {
   const themeA = _theme
@@ -45,7 +47,7 @@ function checkLoaderOff(requestCnt, lastDelay) {
     const resultColorTransition = getComputedStyle(document.documentElement).getPropertyValue('--resultColorTransition')
     const loaderDelay = lastDelay + (resultColorTransition.split('s')[0] * 1000) 
     setTimeout(()=>{ 
-      turnOffLoader() 
+      turnOffLoader(true) 
       toggleButtonsDisabled(false)
       _requestInProgress = false
     }, loaderDelay) 
@@ -54,7 +56,8 @@ function checkLoaderOff(requestCnt, lastDelay) {
 
 function toggleButtonsDisabled(status) {
   enterButton.disabled = status;
-  thingInput.disabled = status;
+  real_input.disabled = status;
+  // Add Examples button
 }
 
 
@@ -62,22 +65,25 @@ function toggleButtonsDisabled(status) {
 function get(thing, resultsObj, keep){
   if (!_requestInProgress || keep) {
     _requestInProgress = true
-    if (thing) { thingInput.value = thing }
+    if (thing) { 
+      real_input.value = thing 
+      falseInputText.innerHTML = thing
+    }
     if (!keep) { clearAllChildren(colorsResult) }
     toggleButtonsDisabled(true)
     turnOnLoader()
     const request = {
-      thing: thing || thingInput.value,
+      thing: thing || real_input.value,
       colors: _req_config.colors,
       requests: _req_config.requests
     }
     const urlString = _URL+request.thing+"/"+request.colors
     fetch(urlString)
       .then( res => res.json())
-      .then( data => handleColors(data, request, resultsObj))
+      .then( data => handleColors(data, request, resultsObj) )
       .catch( error => { 
         _loaderOn = false
-        turnOffLoader()
+        turnOffLoader(true)
         console.log('🚨 error:', error) // * error needs to log to show any code error after this point. 
       }) // * .finally( ()=> ... )
   }

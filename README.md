@@ -60,11 +60,22 @@ This app is setup to deploy from the `client` subfolder. And, the branch `gh-pag
 
 # 🥽 Tests 🧪 
 
-### Mac OS Command-line test commands
+### Client: app.js configs 
+To generate Hard Coded Results to add to examples.js
+- Just set `_getHardCoded` to true. 
+
+If you want to see all tests and examples
+- Just set `_showTests` to true. 
+
+### Server: Mac OS Command-line test commands
 You can add a string after `npm start` to force a specific input and join words with `-` to be more specfic...
 - Example: `node app/test.js bear`
 
 - Example: `node app/test.js polar-bear`
+
+### Mac OS Command-line test commands
+### Mac OS Command-line test commands
+
 
 
 ----

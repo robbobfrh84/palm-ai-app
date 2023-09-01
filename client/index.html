@@ -5,27 +5,32 @@
   <meta charset='UTF-8'><meta http-equiv='X-UA-Compatible' content='ie=edge'>
   <!-- <meta name="viewport" content="width=768, maximum-scale=1.0" />   -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel='stylesheet' href='css/main.css'>
   <link rel='stylesheet' href='css/vars.css'>
+  <link rel='stylesheet' href='css/base_levels.css'>
+  <link rel='stylesheet' href='css/section_navBar.css'>
+  <link rel='stylesheet' href='css/section_input.css'>
+  <link rel='stylesheet' href='css/section_results.css'>
+  <link rel='stylesheet' href='css/section_footer.css'>
   <link rel='stylesheet' href='css/mobile.css'>
   <link rel='stylesheet' href='css/lightDark.css'>
-
 </head> 
 
 
 <body>
   <div id="mainBody">
 
-    <section id="navBar">
+<!-- - - - 🎩 navBar Section - - - 🎩 -->
+    <section id="navBarSection">
 
-      <nav id="title">Color A.I.</nav>
-
-      <nav>      
-        <div id="loader"></div>
+      <nav id="title" onclick="location.reload()">
+        Color <img id="iconSvg" src="assets/icon.svg">
       </nav>
 
       <nav id="topRightNav">
-        <div id="examplesButton"> Examples </div>
+        <div class="navBarButton" onClick="randomExample()">Examples</div>
+
+        <!-- * Placeholder for games -->
+        <div class="navBarButton" id="gamesButton"> Games </div>
 
         <div id="dayNight" onclick="switchDarkLightTheme()">
           <div id="sun" class='toggle'>
@@ -36,32 +41,45 @@
           </div>
         </div>
       </nav>
+
     </section>
-    
-    <span id='navLine' class="divider"></span>
 
 
-    <section id="content">
-      <div class="inputContainer">
-        <input id="thingInput" placeholder="...example: 'cat' or 'Calico Cat'">
+<span id='navLine' class="divider"></span> <!-- 🔥 Do we use id='navLine' ? -->
+
+<!-- - - - 🗳️ Input & Enter Section 🗳️ - - - -->
+    <section id="inputSection">
+
+      <div id="inputContainer">
+        <!-- <input id="real_input" placeholder="...example: 'cat' or 'Calico Cat'"> -->
+        <input id="real_input" autocomplete="off" >
+        <div id="falseInputBorder"></div>
+        <div id="falseInputContainer">
+          <div id="falseInputText"></div>
+          <div id="falseInputCursor"></div>
+        </div> 
       </div>
-      <button id="enterButton" class='btn' onclick="get()" >Enter</button> 
+
+      <div id="loader"></div>
+      
+      <button id="enterButton" onclick="get()" >Enter</button> 
+
+    </section>
+
+
+<!-- TEMP > create actual file -->
+<!-- <img id="iconSvg" src="assets/icon.svg" width="300px" style="top: 300px;"> -->
+<!-- TEMP > create actual file -->
+
+
+<!-- - - - 🔴🟢🔵 Color Results Section 🔵🟢🔴 - - - -->
+    <section id="resultsSection">
       <div id="colorsResult"></div>
     </section>
 
-    <section id="footer">
-      <div>
-        Tests >
-        <button class="btn" onclick="get('usa')">usa</button>
-        <button class="btn" onclick="get('cat')">cat</button>
-        <button class="btn" onclick="get('pig')">pig</button>
-        <button class="btn" onclick="get('cow')">cow</button>
-        <button class="btn" onclick="get('bird')">bird</button>
-        <button class="btn" onclick="get('rainbow')">rainbow</button>
-        <button class="btn" onclick="get('glass')">glass</button>
-        <button class="btn" onclick="get('summer')">summer</button>
-      </div>
-    </section>
+
+<!-- - - - 👠 Footer Section 🥾 - - - -->
+    <section id="footerSection"></section>
 
   </div>
 </body>
@@ -72,5 +90,7 @@
 <script src='js/loader.js'></script>
 <script src='js/colorsResults.js'></script>
 <script src='js/toggleLightDark.js'></script>
+<script src='js/examplesTests.js'></script>
+<script src='js/events.js'></script>
 <script src='app.js'></script>
 </html>

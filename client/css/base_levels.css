@@ -1,0 +1,38 @@
+/* ⛺️ Base Levels ⛺️*/
+* {
+  font-size: var(--root-font-size); 
+  color: var(--themeB); 
+  font-family: Avenir, sans-serif;
+  transition: color var(--pageTansition); 
+}
+body {
+  background-image: var(--themeA-bg);
+  margin: 0;
+  opacity: 0;
+  transition: background-image var(--pageTansition), background-color var(--pageTansition), opacity var(--pageTansition);
+}
+#mainBody {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: var(--mainBodyWidth); 
+  min-height: 100vh;
+}
+
+/* 🧑‍🏫 global Classes 🧑‍🏫 */
+.divider {
+  /* box-shadow: inset 1px 5px 9px -6px rgba(0,0,0,1); */
+  box-shadow: inset 1px 5px 9px -6px rgba(0,0,0,1);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  display: block;
+  /* margin-top: 3px; */
+  /* height: 6px; */
+  height: 10px;
+  width: 100%;
+}
+
+
+
+
+

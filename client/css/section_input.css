@@ -1,0 +1,87 @@
+/* - - - 🗳️ Input & Enter Section 🗳️ - - - */
+#inputSection {
+  margin-top: 1rem;
+  padding: .5rem;
+  text-align: center;
+}
+#inputContainer {
+  position: relative;
+  width: 75%; /* 🤔 Global */
+  margin: auto;
+}
+#real_input {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem; /* 🔥 👯‍♀️ needs to match & Global */
+  box-sizing: border-box;
+  padding: 0.5rem;
+  user-select: none;
+  opacity: 0;
+}
+#falseInputBorder {
+  position: absolute;
+  top: -0.2rem;  /* 🤔 Global / Math */
+  left: -0.2rem;  /* 🤔 Global / Math */
+  width: 100%;
+  height: 4.2rem;  /* 🤔 Global */
+  border-radius: 4.2rem; /* 🤔 Global */
+  border: 0.2rem solid rgba(0,0,200,0.3); /* 🤔 Global */
+  user-select: none;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity .3s; /* 🤔 Global Time */
+}
+#falseInputContainer {
+  position: absolute;
+  top: 0.1rem; /* 🤔 Global / Math */
+  left: 0.1rem; /* 🤔 Global / Math */
+  right: 0.1rem; /* 🤔 Global / Math */
+  height: 4rem; /* 🤔 Global */
+  border-radius: 4rem; /* 🤔 Global */
+  box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.5) inset;
+  user-select: none;
+  pointer-events: none;
+}
+#falseInputText {
+  display: inline-block;
+  position: relative;
+  left: 0.8rem; 
+  font-size: 2rem; /* 🔥 👯‍♀️ needs to match & Global */
+}
+#falseInputCursor {
+  display: inline-block;
+  position: relative;
+  top: 0.75rem; 
+  background-color: rgba(200,0,0,0.25);
+  height: 2.5rem;
+  width: 1rem; 
+  opacity: 0;
+}
+.cursorBlinker {
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  5%  { opacity: 1; }
+  50% { opacity: 1; }
+  55% { opacity: 0; }
+  95% { opacity: 0; }
+}
+
+/* 🎬 Button */
+#enterButton {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  padding: 0.25rem;
+  width: 7rem;
+  height: 2.6rem;
+  border-radius: 2.5rem;
+  letter-spacing: 0.1rem;
+  border: 1px solid rgba(0,0,0,0.25);
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+  background-color: rgba(255,255,255,0.25);
+  cursor: pointer;
+}
+
+
+
+

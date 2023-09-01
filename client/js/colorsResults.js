@@ -5,6 +5,7 @@ function handleColors({ validOutputs, colorObjectArray }, req, resultsObj) {
     get(req.thing, resultsObj, true)
   } else {
     _loaderOn = false
+    if (_getHardCoded) { createHardCodedAlert(req.thing, resultsObj.colors) }
   }
 
   displayColors(resultsObj)
@@ -36,7 +37,6 @@ function trackResults(validOutputs, colorObjectArray, req, resultsObj) {
 
 function displayColors(resultsObj) { // * So, this was pretty tricky to get the loader to turn off at the right time. Often it would be too soon as we had fake delays. 
   const requestCnt = resultsObj.requestCnt 
-
   resultsObj.requestDelay = Date.now() - resultsObj.requestDelay
   const reqDelay = resultsObj.requestDelay
   resultsObj.requestDelay = Date.now()
@@ -45,25 +45,26 @@ function displayColors(resultsObj) { // * So, this was pretty tricky to get the 
   resultsObj.toAdd.forEach( c =>{
     const randomDelay = c.rank == 1 ? 0 : random(200,750)
     resultsObj.lastDelay += randomDelay
-    const delay = resultsObj.lastDelay
     buildHTML(c)
-
-    const name = c.name
-    const resultColorWidth = getComputedStyle(document.documentElement).getPropertyValue('--resultColorWidth')
-    const resultColorBoxShadow = getComputedStyle(document.documentElement).getPropertyValue('--resultColorBoxShadow')
-    const resultColorMargin = getComputedStyle(document.documentElement).getPropertyValue('--resultColorMargin')
-
-    setTimeout(()=>{
-      window["color-"+name].style.width = resultColorWidth 
-      window["color-"+name].style.height = resultColorWidth
-      window["color-"+name].style.boxShadow =  resultColorBoxShadow 
-      window["color-"+name].parentElement.style.margin = resultColorMargin
-      window["color-"+name].style.marginTop = "0rem"
-    }, delay)
+    buildDelay(c, resultsObj.lastDelay)
   })
 
   checkLoaderOff(requestCnt, resultsObj.lastDelay)
+}
 
+function buildDelay(c, delay) {
+  const name = c.name
+  const resultColorWidth = getComputedStyle(document.documentElement).getPropertyValue('--resultColorWidth')
+  const resultColorBoxShadow = getComputedStyle(document.documentElement).getPropertyValue('--resultColorBoxShadow')
+  const resultColorMargin = getComputedStyle(document.documentElement).getPropertyValue('--resultColorMargin')
+
+  setTimeout(()=>{
+    window["color-"+name].style.width = resultColorWidth 
+    window["color-"+name].style.height = resultColorWidth
+    window["color-"+name].style.boxShadow =  resultColorBoxShadow 
+    window["color-"+name].parentElement.style.margin = resultColorMargin
+    window["color-"+name].style.marginTop = "0rem"
+  }, delay)
 }
 
 function buildHTML(c){
