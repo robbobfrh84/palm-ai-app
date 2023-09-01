@@ -1,7 +1,8 @@
 /* - - - 🔴🟢🔵 Color Results Section 🔵🟢🔴 - - - */
 #resultsSection {
   flex: 1 0 auto;
-  padding: .5rem;
+  padding: 0.5rem;
+  padding-top: 1rem;
   text-align: center;
 }
 #colorsResult {
