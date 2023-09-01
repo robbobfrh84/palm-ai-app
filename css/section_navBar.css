@@ -13,17 +13,17 @@
   letter-spacing: 0.1rem;
   width: 100px;
   cursor: pointer;
-  /* transition: opacity .3s; */
+  transition: opacity 0.25s;
 }
 #iconSvg {
   position: absolute;
   top: -0.5rem;
   left: 4.5rem;
-  /* opacity: 1; */
+  opacity: 0.25s;
 }
 #title:hover {
   opacity: 0.6;
-  /* transition: opacity .3s; */
+  transition: opacity 0.25s;
 }
 #topRightNav {
   display: flex;
@@ -35,10 +35,11 @@
 .navBarButton {
   opacity: 1;
   cursor: pointer;
+  transition: opacity 0.25s;
 }
 .navBarButton:hover {
   opacity: 0.6;
-  transition: opacity .3s;
+  transition: opacity 0.25s;
 }
 #topRightNav > div { 
   margin-left: 1rem;
