@@ -63,6 +63,7 @@ function toggleButtonsDisabled(status) {
 
 /* - - - - - API - - - - - */ 
 function get(thing, resultsObj, keep){
+  alert('get()')
   if (!_requestInProgress || keep) {
     _requestInProgress = true
     if (thing) { 
