@@ -2,15 +2,17 @@ let _URL = "http://localhost:8080/"
 let _theme = 'light'
 let _loaderOn = false
 let _requestInProgress = false
+//
+//
+// let _first_click_back = false
+//
+//
 const _req_config = { colors: 6, requests: 2 }
 
 const _showTests = false // * If true, will show tests and examples in the footer. 
 const _getHardCoded = false // * If true, you'll get an alert with a json object you can copy and paste into exampleTests.js. 
 
 function getInitialVars() {
-  // window.highlightBorderOn = inputContainer.style.border
-  // window.highlightBorderOff = "0.2rem solid rgba(0,0,0,0)"
-
   window.falseInputCursorLeft = falseInputCursor.style.left
   window.falseInputCursorLeftTyped = "0.6rem"
 }
@@ -55,9 +57,11 @@ function checkLoaderOff(requestCnt, lastDelay) {
 }
 
 function toggleButtonsDisabled(status) {
-  enterButton.disabled = status;
   real_input.disabled = status;
-  // Add Examples button
+  enterButton.disabled = status;
+  enterButton.style.cursor = status ? 'default' : 'pointer'
+  examplesButton.disabled = status;
+  examplesButton.style.cursor = status ? 'default' : 'pointer'
 }
 
 

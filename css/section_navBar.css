@@ -34,6 +34,8 @@
 }
 .navBarButton {
   opacity: 1;
+  border-right: solid 2px rgba(0,0,0,0.15);
+  padding-right: 0.5rem;
   cursor: pointer;
   transition: opacity 0.25s;
 }
@@ -42,5 +44,5 @@
   transition: opacity 0.25s;
 }
 #topRightNav > div { 
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }

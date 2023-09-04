@@ -11,13 +11,7 @@ document.body.addEventListener("keypress", function(event) {
 // * 👺 Tracking real_input for false input mirroring 
 real_input.addEventListener("input", function(event) {
   falseInputText.innerHTML = real_input.value
-
-  // * ⬅️ Adjust cursor to keep centered. 
-  if (real_input.value.split('').length > 0) {
-    falseInputCursor.style.left = window.falseInputCursorLeftTyped
-  } else {
-    falseInputCursor.style.left = window.falseInputCursorLeft
-  }
+  adjustCursor()
 })
 real_input.addEventListener("keyup", function(event) {
   falseInputText.innerHTML = real_input.value
@@ -31,9 +25,12 @@ real_input.addEventListener("click", function(event) {
   const end = real_input.value.split('').length
   event.target.selectionStart = end
   event.target.selectionEnd = end
+  // GLOBALIZE
+  falseInputContainer.style.backgroundColor = "rgba(0,0,0,0)"
 
 })
 real_input.addEventListener("focus", function(event) {
+  adjustCursor()
   falseInputBorder.style.opacity = 1
   falseInputCursor.classList.add("cursorBlinker")
 })
@@ -41,3 +38,11 @@ real_input.addEventListener("focusout", function(event) {
   falseInputBorder.style.opacity = 0
   falseInputCursor.classList.remove("cursorBlinker")
 })
+
+function adjustCursor() {
+  if (real_input.value.split('').length > 0) {
+    falseInputCursor.style.left = window.falseInputCursorLeftTyped
+  } else {
+    falseInputCursor.style.left = window.falseInputCursorLeft
+  }
+}
