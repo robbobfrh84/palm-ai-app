@@ -14,10 +14,6 @@
   margin: 0;
   transition: margin var(--resultColorTransition);
 }
-/* .colorName {
-  font-size: 1rem;
-  text-align: center;
-} */
 .colorCircle {
   width: 0;
   height: 0;

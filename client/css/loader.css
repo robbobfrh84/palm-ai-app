@@ -1,9 +1,10 @@
 #loader1 {
   position: absolute;
-  top: 1.25rem;
+  top: 2.8rem;
   left: 0px;
   right: 0px;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 1s;
 }
 ._loader-fullscreen-over {
@@ -19,7 +20,7 @@
   /* margin: auto; */
 }
 ._loader-sLoader {
-  width: 175px;
+  width: 5rem;
   /* height: 30px; */
   display: flex;
   justify-content: space-between;
@@ -29,15 +30,15 @@
   /* background-color: rgba(0,0,0,0.1); */
 }
 ._loader-sLoader > div {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: cornflowerblue;
 }
 
 @keyframes bouncing {
   0% {
-    transform: translate3d(0, 40px, 0) scale(1.2, 0.85);
+    transform: translate3d(0, 12px, 0) scale(1.2, 0.85);
   }
   100% {
     transform: translate3d(0, 0px, 0) scale(0.9, 1.1);
