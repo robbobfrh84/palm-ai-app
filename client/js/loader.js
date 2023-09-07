@@ -3,10 +3,9 @@ function turnOnLoader() {
   _loaderOn = true
 
   enterButton.style.color = "rgba(0,0,0,0)"
-  enterButton.style.boxShadow = "inset 0px 0px 2px 2px rgba(0,0,0,0.3), 0px 0px 0px rgba(0,0,0,0.25)"
-  enterButton.style.backgroundColor = "rgba(255,255,255,0)"
-
   setTimeout(()=>{
+    enterButton.style.boxShadow = "inset 0px 0px 2px 2px rgba(0,0,0,0.3), 0px 0px 0px rgba(0,0,0,0.25)"
+    enterButton.style.backgroundColor = "rgba(255,255,255,0)"
     falseInputContainer.style.boxShadow = "inset 0px 0px 0px 0px rgba(0,0,0,0), 0px 0px 3px 3px rgba(0,0,0,0.25)"
     falseInputContainer.style.backgroundColor = "rgba(0,0,0,0.075)"
   },500)
@@ -20,12 +19,10 @@ function turnOffLoader(check) {
   if (!_loaderOn || !check) {
     _loader.off("loader1")
     setTimeout(()=>{
-      enterButton.style.color = "rgba(0,0,0,0.75)"
-      enterButton.style.backgroundColor = "rgba(255,255,255,0.25)"
-      enterButton.style.boxShadow = "inset 0px 0px 0px 0px rgba(0,0,0,0.3), 2px 2px 2px rgba(0,0,0,0.25)"
-      
-      falseInputContainer.style.boxShadow = "inset 0px 0px 3px 3px rgba(0,0,0,0.5), 0px 0px 0px 0px rgba(0,0,0,0.5)"
-      // falseInputContainer.style.backgroundColor = "rgba(0,0,0,0)"
+      enterButton.style.color = window.enterColor
+      enterButton.style.boxShadow = window.enterBoxShadow
+      enterButton.style.backgroundColor = window.enterBackgroundColor
+      falseInputContainer.style.boxShadow = window.inputBoxShadow
     },300)
   }
 }

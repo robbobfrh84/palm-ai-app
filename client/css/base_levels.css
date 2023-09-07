@@ -21,16 +21,17 @@ body {
 
 /* 🧑‍🏫 global Classes 🧑‍🏫 */
 .divider {
-  /* box-shadow: inset 1px 5px 9px -6px rgba(0,0,0,1); */
   box-shadow: inset 1px 5px 9px -6px rgba(0,0,0,1);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   display: block;
-  /* margin-top: 3px; */
-  /* height: 6px; */
   height: 10px;
   width: 100%;
 }
+.divider.flip {
+  box-shadow: inset 1px -5px 9px -6px rgba(0,0,0,1);
+}
+
 
 
 

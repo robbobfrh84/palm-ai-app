@@ -1,3 +1,13 @@
+function buildColorResultContainer(divide) {
+  resultsSection.innerHTML = /*html*/`
+    <div id="historiclPosition_${_historyCnt}">
+      <span id="historicalDivide_${_historyCnt}" class="divider historicalDivide"></span> 
+      <div id="historical_${_historyCnt}" class="historical"></div>
+      <div id="colorsResult_${_historyCnt}" class="colorResultsContainer"></div>
+    </div>
+  ` + resultsSection.innerHTML
+}
+
 function handleColors({ validOutputs, colorObjectArray }, req, resultsObj) {
   resultsObj = trackResults(validOutputs, colorObjectArray, req, resultsObj)
 
@@ -57,28 +67,56 @@ function buildDelay(c, delay) {
   const resultColorWidth = getComputedStyle(document.documentElement).getPropertyValue('--resultColorWidth')
   const resultColorBoxShadow = getComputedStyle(document.documentElement).getPropertyValue('--resultColorBoxShadow')
   const resultColorMargin = getComputedStyle(document.documentElement).getPropertyValue('--resultColorMargin')
+  let rowBreak = ((c.rank - 1) % 3 === 0) ? true : false
 
   setTimeout(()=>{
-    window["color-"+name].style.width = resultColorWidth 
-    window["color-"+name].style.height = resultColorWidth
-    window["color-"+name].style.boxShadow =  resultColorBoxShadow 
-    window["color-"+name].parentElement.style.margin = resultColorMargin
-    window["color-"+name].style.marginTop = "0rem"
+    // debugger
+    // 🤔 THOUGHT 
+    // - save c.rank as 'rank'
+    // if 1,4,7, etc... Add hight of window["colorsResult_"+_historyCnt]
+    // to match, and like .2s
+    if (c.rank === 1 || rowBreak) {
+      // *🔥[finish note] | This is a bit clumbsy...
+  
+      const CSSvars = getComputedStyle(document.documentElement)
+      const resultColorMargin = parseFloat( CSSvars.getPropertyValue('--resultColorMargin') )
+      const rowHeight = parseFloat( CSSvars.getPropertyValue('--resultColorWidth') )
+      const currentRowHeight = parseFloat(window["colorsResult_"+_historyCnt].style.height || 0)
+      const height = rowHeight + currentRowHeight + (resultColorMargin *2)
+      window["colorsResult_"+_historyCnt].style.height = height+'rem'
+    }
+    //
+    //
+    window["color-"+name+"_"+_historyCnt].style.width = resultColorWidth 
+    window["color-"+name+"_"+_historyCnt].style.height = resultColorWidth
+    window["color-"+name+"_"+_historyCnt].style.boxShadow =  resultColorBoxShadow 
+    window["color-"+name+"_"+_historyCnt].parentElement.style.margin = resultColorMargin
+    window["color-"+name+"_"+_historyCnt].style.marginTop = "0rem"
   }, delay)
 }
 
 function buildHTML(c){
   let rowBreak = (c.rank !== 1 && (c.rank - 1) % 3 === 0) ? true : false
   if (rowBreak) {
-    colorsResult.appendChild(document.createElement("br"))
+    window["colorsResult_"+_historyCnt].appendChild(document.createElement("br"))
   }
+  // if (c.rank === 1 || rowBreak) {
+  //   // *🔥[finish note] | This is a bit clumbsy...
+
+  //   const currentRowHeight = parseFloat(window["colorsResult_"+_historyCnt].style.height || 0)
+  //   const CSSvars = getComputedStyle(document.documentElement)
+  //   const resultColorMargin = parseFloat( CSSvars.getPropertyValue('--resultColorMargin') )
+  //   const rowHeight = parseFloat( CSSvars.getPropertyValue('--resultColorWidth') )
+  //   const height = rowHeight + currentRowHeight + (resultColorMargin *2)
+  //   window["colorsResult_"+_historyCnt].style.height = height+'rem'
+  // }
 
   const containerElm = document.createElement('div')
   containerElm.classList.add('colorCircleContainer')
 
   const colorElm = document.createElement('div')
   colorElm.classList.add('colorCircle')
-  colorElm.id = "color-"+c.name
+  colorElm.id = "color-"+c.name+"_"+_historyCnt
 
   colorElm.style.backgroundColor = c.rgb || ''
   if (!c.rgb && c.name === "transparent") {
@@ -87,5 +125,29 @@ function buildHTML(c){
   } 
 
   containerElm.appendChild(colorElm)
-  colorsResult.appendChild(containerElm)
+  window["colorsResult_"+_historyCnt].appendChild(containerElm)
+}
+
+function addColorResultToHistory() {
+  _newInput = false
+  const saveReq = real_input.value
+  const saveHistoricalCnt = _historyCnt
+  _historyCnt++
+  buildColorResultContainer()
+  falseInputText.innerHTML = ''
+  real_input.value = ''
+  falseInputContainer.style.backgroundColor = "rgba(0,0,0,0)"
+  adjustCursor()
+
+  setTimeout(()=>{
+    window['historical_'+saveHistoricalCnt].style.color = 'var(--themeB)'
+    window['historical_'+saveHistoricalCnt].style.height = '1.5rem'
+    window['historical_'+saveHistoricalCnt].style.paddingBottom = '1rem'
+    window['historicalDivide_'+saveHistoricalCnt].style.height = '10px'
+    window['historicalDivide_'+saveHistoricalCnt].style.marginTop = '5rem'
+    setTimeout(()=>{
+      window['historical_'+saveHistoricalCnt].innerHTML = saveReq
+    }, 300) 
+  }, 0)
+
 }

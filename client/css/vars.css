@@ -4,19 +4,31 @@
   --root-font-size: 16px; 
   --pageTansition: 2s;
   --mainBodyWidth: 48rem;
+  --hoverFade: 0.25s;
 
   /* Mobile */
   --mobileRootFontSize: 1rem; /* Ya, this is redundent, but want to keep for quick changes if needed. */
 
   /* Colors */
-  --light:  #FAF9F9; /* 🔥 Don't quite match hash color of bg */
-  --dark: #1C1814; /* 🔥 Don't quite match hash color of bg */
+  --light:  #FAF9F9; 
+  --dark: #1C1814; 
   --themeA: var(--light);
   --themeB: var(--dark);
   --light-bg: url('../assets/light-grain.png'); /* https://bg.siteorigin.com/?color=%23FAF9F9&pattern=beige_paper&blend=3&intensity=13&noise=0&invert=0&2x=0 */
   --dark-bg: url('../assets/dark-grain.png'); /* https://bg.siteorigin.com/?color=%231C1814&pattern=beige_paper&blend=3&intensity=13&noise=0&invert=0&2x=0 */
   --themeA-bg: var(--light-bg);
   --themeB-bg: var(--dark-bg);
+
+  /* Input, Enter and loader */
+  --inputWidth: 75%;
+  --inputTextSize: 2rem;
+  --inputBackgroundColor: rgba(0,0,0,0);
+  --inputBoxShadow: inset 0px 0px 3px 3px rgba(0,0,0,0.5), 0px 0px 0px 0px rgba(0,0,0,0.5);
+
+  --highlightBorderFade: 0.5s;
+  --boxShadowFades: 1s;
+  --enterTextFade: 0.3s;
+  --loaderFade: 1s;
 
   /* Result Colors & Transitioninng */
   --resultColorWidth: 6rem; 

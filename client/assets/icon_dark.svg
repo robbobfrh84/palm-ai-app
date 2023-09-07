@@ -1,0 +1,15 @@
+<svg width="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" >
+  <style>
+    text {
+      font-family: Avenir;
+      font-size: 50px;
+      letter-spacing: 3px;
+    }
+  </style>
+  <text x="12" y="65" fill="white"> A.I.</text>
+  <circle cx="12" cy="69" r="7" fill="red"/>
+  <circle cx="29" cy="25" r="7" fill="green" />
+  <circle cx="46" cy="69" r="7" fill="dodgerblue" />
+  <circle cx="73" cy="25" r="7" fill="violet" />
+  <circle cx="73" cy="69" r="7" fill="goldenrod" />
+</svg>
