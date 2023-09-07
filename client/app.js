@@ -15,7 +15,8 @@ function getInitialVars() {
   window.enterBackgroundColor = enterButton.style.backgroundColor 
   window.inputBoxShadow = falseInputCursor.style.boxShadow
   window.falseInputCursorLeft = falseInputCursor.style.left
-  window.falseInputCursorLeftTyped = "0.6rem"
+  const width = window.innerWidth
+  window.falseInputCursorLeftTyped = width > 768 ? "0.6rem" : "0.35rem"
 }
 
 window.onload = ()=>{
