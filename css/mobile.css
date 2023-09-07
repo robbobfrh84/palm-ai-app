@@ -1,6 +1,14 @@
 @media (max-width: 768px) {
+  :root {
+    --mobileRootFontSize: 1rem; /* Ya, this is redundent, but want to keep for quick changes if needed. */
+    --mobileInputFontSize: 1.4rem;
+    --resultColorWidth: 4rem; 
+  }
   * {
     font-size: var(--mobileRootFontSize);
+  }
+  #mainBody {
+    width: 100%; 
   }
   #title {
     margin-left: 0.5rem;
@@ -14,13 +22,33 @@
   #inputContainer {
     width: 90%;
   }
-  input {
+  #falseInputBorder {
+    height: 3rem;  
+  }
+  #falseInputContainer {
+    height: 2.8rem;  
+    border-radius: 2.8rem; 
+  }
+  #real_input {
     font-size: var(--mobileInputFontSize);
   }
-  #mainBody {
-    width: 100%; 
+  #falseInputText {
+    font-size: var(--mobileInputFontSize);
+    left: 0.5rem; 
+  }
+  #falseInputCursor {
+    top: 0.5rem; 
+    height: 1.75rem;
+    width: 0.75rem; 
   }
   #enterButton {
     font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  #resultsSection {
+    /* padding-top: 0.75rem; */
+  }
+  #loader1 {
+    top: 2.3rem !important;
   }
 }

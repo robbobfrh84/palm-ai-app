@@ -6,9 +6,6 @@
   --mainBodyWidth: 48rem;
   --hoverFade: 0.25s;
 
-  /* Mobile */
-  --mobileRootFontSize: 1rem; /* Ya, this is redundent, but want to keep for quick changes if needed. */
-
   /* Colors */
   --light:  #FAF9F9; 
   --dark: #1C1814; 

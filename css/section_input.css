@@ -55,6 +55,7 @@
   display: inline-block;
   position: relative;
   white-space: pre;
+  top: 0.1rem;
   left: 0.8rem; 
   font-size: var(--inputTextSize);
 }
