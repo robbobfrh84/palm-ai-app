@@ -13,7 +13,7 @@
   letter-spacing: 0.1rem;
   width: 100px;
   cursor: pointer;
-  transition: opacity 0.25s;
+  transition: opacity var(--hoverFade);
 }
 #iconSvg {
   position: absolute;
@@ -23,7 +23,7 @@
 }
 #title:hover {
   opacity: 0.6;
-  transition: opacity 0.25s;
+  transition: opacity var(--hoverFade);
 }
 #topRightNav {
   display: flex;
@@ -41,7 +41,7 @@
 }
 .navBarButton:hover {
   opacity: 0.6;
-  transition: opacity 0.25s;
+  transition: opacity var(--hoverFade);
 }
 #topRightNav > div { 
   margin-left: 0.5rem;

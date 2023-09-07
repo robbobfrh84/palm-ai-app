@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang='en'>
-<title> Color A.I. </title>
-<link rel='icon' href='assets/icon.svg'> 
+<title>Color A.I.</title>
+<link rel='icon' href='assets/icon_light.svg'> 
 <head>
   <meta charset='UTF-8'><meta http-equiv='X-UA-Compatible' content='ie=edge'>
   <!-- <meta name="viewport" content="width=768, maximum-scale=1.0" />   -->
@@ -24,14 +24,15 @@
     <section id="navBarSection">
 
       <nav id="title" onclick="location.reload()">
-        Color <img id="iconSvg" src="assets/icon.svg">
+        Color 
+        <svg id="iconSvg" width="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg>
       </nav>
 
       <nav id="topRightNav">
         <div class="navBarButton" id="examplesButton" onclick="randomExample()">Examples</div>
 
         <!-- * Placeholder for games -->
-        <div class="navBarButton" id="gamesButton"> Games </div>
+        <!-- <div class="navBarButton" id="gamesButton">Games</div> -->
 
         <div id="dayNight" onclick="switchDarkLightTheme()">
           <div id="sun" class='toggle'>
@@ -46,7 +47,7 @@
     </section>
 
 
-<span id='navLine' class="divider"></span> <!-- 🔥 Do we use id='navLine' ? -->
+<span class="divider"></span> 
 
 <!-- - - - 🗳️ Input & Enter Section 🗳️ - - - -->
     <section id="inputSection">
@@ -72,10 +73,10 @@
     </section>
 
 <!-- - - - 🔴🟢🔵 Color Results Section 🔵🟢🔴 - - - -->
-    <section id="resultsSection">
-      <div id="colorsResult"></div>
-    </section>
+    <section id="resultsSection"></section>
 
+
+<span class="divider flip"></span> 
 
 <!-- - - - 👠 Footer Section 🥾 - - - -->
     <section id="footerSection"></section>
@@ -91,5 +92,6 @@
 <script src='js/toggleLightDark.js'></script>
 <script src='js/examplesTests.js'></script>
 <script src='js/events.js'></script>
+<script src='js/icon.js'></script>
 <script src='app.js'></script>
 </html>

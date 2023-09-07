@@ -25,15 +25,17 @@ real_input.addEventListener("click", function(event) {
   const end = real_input.value.split('').length
   event.target.selectionStart = end
   event.target.selectionEnd = end
-  // GLOBALIZE
-  falseInputContainer.style.backgroundColor = "rgba(0,0,0,0)"
-
+  if (_newInput) {
+    addColorResultToHistory()
+  }
 })
+
 real_input.addEventListener("focus", function(event) {
   adjustCursor()
   falseInputBorder.style.opacity = 1
   falseInputCursor.classList.add("cursorBlinker")
 })
+
 real_input.addEventListener("focusout", function(event) {
   falseInputBorder.style.opacity = 0
   falseInputCursor.classList.remove("cursorBlinker")

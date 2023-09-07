@@ -21,9 +21,9 @@ const examples = [ // * 👀 formats to oneline > https://www.text-utils.com/jso
   // all colors
   {"thing":"Rainbow","saved":[{"count":2,"name":"violet","rgb":"rgb(238, 130, 238)","hex":"#ee82ee","rank":1},{"count":2,"name":"indigo","rgb":"rgb(75, 0, 130)","hex":"#4b0082","rank":2},{"count":2,"name":"blue","rgb":"rgb(0, 0, 255)","hex":"#0000ff","rank":3},{"count":2,"name":"green","rgb":"rgb(0, 128, 0)","hex":"#008000","rank":4},{"count":2,"name":"yellow","rgb":"rgb(255, 255, 0)","hex":"#ffff00","rank":5},{"count":2,"name":"orange","rgb":"rgb(255, 165, 0)","hex":"#ffa500","rank":6}]},
   // emojies
-  {"thing":"🥶","saved":[{"count":2,"name":"aliceblue","rgb":"rgb(240, 248, 255)","hex":"#f0f8ff","rank":1},{"count":2,"name":"cadetblue","rgb":"rgb(95, 158, 160)","hex":"#5f9ea0","rank":2},{"count":2,"name":"lightsteelblue","rgb":"rgb(176, 196, 222)","hex":"#b0c4de","rank":3},{"count":2,"name":"lightblue","rgb":"rgb(173, 216, 230)","hex":"#add8e6","rank":4},{"count":1,"name":"lightcyan","rgb":"rgb(224, 255, 255)","hex":"#e0ffff","rank":5},{"count":1,"name":"cornflowerblue","rgb":"rgb(100, 149, 237)","hex":"#6495ed","rank":6},{"count":1,"name":"powderblue","rgb":"rgb(176, 224, 230)","hex":"#b0e0e6","rank":7}]},  
-  {"thing":"😤","saved":[{"count":2,"name":"red","rgb":"rgb(255, 0, 0)","hex":"#ff0000","rank":1},{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":2},{"count":1,"name":"black","rgb":"rgb(0, 0, 0)","hex":"#000000","rank":3},{"count":1,"name":"orange","rgb":"rgb(255, 165, 0)","hex":"#ffa500","rank":4},{"count":1,"name":"yellow","rgb":"rgb(255, 255, 0)","hex":"#ffff00","rank":5},{"count":2,"name":"transparent","rank":6}]},
-  {"thing":"👩‍🚀","saved":[{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":1},{"count":1,"name":"black","rgb":"rgb(0, 0, 0)","hex":"#000000","rank":2},{"count":1,"name":"gray","rgb":"rgb(128, 128, 128)","hex":"#808080","rank":3},{"count":1,"name":"silver","rgb":"rgb(192, 192, 192)","hex":"#c0c0c0","rank":4},{"count":1,"name":"orange","rgb":"rgb(255, 165, 0)","hex":"#ffa500","rank":5},{"count":1,"name":"aliceblue","rgb":"rgb(240, 248, 255)","hex":"#f0f8ff","rank":6},{"count":1,"name":"aqua","rgb":"rgb(0, 255, 255)","hex":"#00ffff","alias":"cyan","rank":7},{"count":2,"name":"transparent","rank":8}]}, 
+  // {"thing":"🥶","saved":[{"count":2,"name":"aliceblue","rgb":"rgb(240, 248, 255)","hex":"#f0f8ff","rank":1},{"count":2,"name":"cadetblue","rgb":"rgb(95, 158, 160)","hex":"#5f9ea0","rank":2},{"count":2,"name":"lightsteelblue","rgb":"rgb(176, 196, 222)","hex":"#b0c4de","rank":3},{"count":2,"name":"lightblue","rgb":"rgb(173, 216, 230)","hex":"#add8e6","rank":4},{"count":1,"name":"lightcyan","rgb":"rgb(224, 255, 255)","hex":"#e0ffff","rank":5},{"count":1,"name":"cornflowerblue","rgb":"rgb(100, 149, 237)","hex":"#6495ed","rank":6},{"count":1,"name":"powderblue","rgb":"rgb(176, 224, 230)","hex":"#b0e0e6","rank":7}]},  
+  // {"thing":"😤","saved":[{"count":2,"name":"red","rgb":"rgb(255, 0, 0)","hex":"#ff0000","rank":1},{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":2},{"count":1,"name":"black","rgb":"rgb(0, 0, 0)","hex":"#000000","rank":3},{"count":1,"name":"orange","rgb":"rgb(255, 165, 0)","hex":"#ffa500","rank":4},{"count":1,"name":"yellow","rgb":"rgb(255, 255, 0)","hex":"#ffff00","rank":5},{"count":2,"name":"transparent","rank":6}]},
+  // {"thing":"👩‍🚀","saved":[{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":1},{"count":1,"name":"black","rgb":"rgb(0, 0, 0)","hex":"#000000","rank":2},{"count":1,"name":"gray","rgb":"rgb(128, 128, 128)","hex":"#808080","rank":3},{"count":1,"name":"silver","rgb":"rgb(192, 192, 192)","hex":"#c0c0c0","rank":4},{"count":1,"name":"orange","rgb":"rgb(255, 165, 0)","hex":"#ffa500","rank":5},{"count":1,"name":"aliceblue","rgb":"rgb(240, 248, 255)","hex":"#f0f8ff","rank":6},{"count":1,"name":"aqua","rgb":"rgb(0, 255, 255)","hex":"#00ffff","alias":"cyan","rank":7},{"count":2,"name":"transparent","rank":8}]}, 
   // sports teams 
   {"thing":"49ers","saved":[{"count":2,"name":"gold","rgb":"rgb(255, 215, 0)","hex":"#ffd700","rank":1},{"count":2,"name":"red","rgb":"rgb(255, 0, 0)","hex":"#ff0000","rank":2},{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":3}]}, 
   // countries
@@ -64,14 +64,16 @@ function createHardCodedAlert(thing, colors) {
 }
 
 function randomExample() {
+  if (_newInput) {
+    addColorResultToHistory()
+  }
+  _newInput = true
   turnOnLoader() 
   toggleButtonsDisabled(true)
   const { thing, saved } = examples[random(0, examples.length - 1)]
   falseInputText.innerHTML = thing
   real_input.value = thing
-
-  clearAllChildren(colorsResult)
-
+  // clearAllChildren(colorsResult)
   let delay = 1000
   saved.forEach( (c, i) => {
     const randomDelay = c.rank == 1 ? 0 : random(200,750)
