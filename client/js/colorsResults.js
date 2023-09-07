@@ -70,14 +70,8 @@ function buildDelay(c, delay) {
   let rowBreak = ((c.rank - 1) % 3 === 0) ? true : false
 
   setTimeout(()=>{
-    // debugger
-    // 🤔 THOUGHT 
-    // - save c.rank as 'rank'
-    // if 1,4,7, etc... Add hight of window["colorsResult_"+_historyCnt]
-    // to match, and like .2s
     if (c.rank === 1 || rowBreak) {
-      // *🔥[finish note] | This is a bit clumbsy...
-  
+      // * This is a bit clumbsy... But, because of how we animate the bubbles out there need to be a set hight for the circle to measure against. If the hight is 0, of the container, we bubble from top down. which looks less clean. SO, the makes all Colors background track with the growth. It isn't needed on first request, only when we have history.
       const CSSvars = getComputedStyle(document.documentElement)
       const resultColorMargin = parseFloat( CSSvars.getPropertyValue('--resultColorMargin') )
       const rowHeight = parseFloat( CSSvars.getPropertyValue('--resultColorWidth') )
@@ -85,8 +79,6 @@ function buildDelay(c, delay) {
       const height = rowHeight + currentRowHeight + (resultColorMargin *2)
       window["colorsResult_"+_historyCnt].style.height = height+'rem'
     }
-    //
-    //
     window["color-"+name+"_"+_historyCnt].style.width = resultColorWidth 
     window["color-"+name+"_"+_historyCnt].style.height = resultColorWidth
     window["color-"+name+"_"+_historyCnt].style.boxShadow =  resultColorBoxShadow 
@@ -100,16 +92,6 @@ function buildHTML(c){
   if (rowBreak) {
     window["colorsResult_"+_historyCnt].appendChild(document.createElement("br"))
   }
-  // if (c.rank === 1 || rowBreak) {
-  //   // *🔥[finish note] | This is a bit clumbsy...
-
-  //   const currentRowHeight = parseFloat(window["colorsResult_"+_historyCnt].style.height || 0)
-  //   const CSSvars = getComputedStyle(document.documentElement)
-  //   const resultColorMargin = parseFloat( CSSvars.getPropertyValue('--resultColorMargin') )
-  //   const rowHeight = parseFloat( CSSvars.getPropertyValue('--resultColorWidth') )
-  //   const height = rowHeight + currentRowHeight + (resultColorMargin *2)
-  //   window["colorsResult_"+_historyCnt].style.height = height+'rem'
-  // }
 
   const containerElm = document.createElement('div')
   containerElm.classList.add('colorCircleContainer')

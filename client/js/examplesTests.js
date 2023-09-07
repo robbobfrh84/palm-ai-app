@@ -73,7 +73,6 @@ function randomExample() {
   const { thing, saved } = examples[random(0, examples.length - 1)]
   falseInputText.innerHTML = thing
   real_input.value = thing
-  // clearAllChildren(colorsResult)
   let delay = 1000
   saved.forEach( (c, i) => {
     const randomDelay = c.rank == 1 ? 0 : random(200,750)

@@ -36,6 +36,8 @@
   --resultColorMargin: 0.5rem;
   --resultColorTransparent: url('assets/transparent.png');
   --resultColorTransition: 1s;
+  --historicalGapGrows: 0.5s;
+  --historicalColorFade: 2s;
 
   /* Toggle */
   --width: 50px; 

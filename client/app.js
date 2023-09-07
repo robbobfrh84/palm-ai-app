@@ -80,7 +80,6 @@ function get(thing, resultsObj, keep){
       real_input.value = thing 
       falseInputText.innerHTML = thing
     }
-    // if (!keep) { clearAllChildren(colorsResult) }
     toggleButtonsDisabled(true)
     turnOnLoader()
     const request = {
@@ -97,7 +96,8 @@ function get(thing, resultsObj, keep){
       })
       .catch( error => { 
         _loaderOn = false
-        turnOffLoader(true)
+        setTimeout(()=>{turnOffLoader(true)},300)
+        toggleButtonsDisabled(false)
         console.log('🚨 error:', error) // * error needs to log to show any code error after this point. 
       }) // * .finally( ()=> ... )
   } else if (real_input.value == "") {
