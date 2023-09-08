@@ -5,6 +5,7 @@
   --pageTansition: 2s;
   --mainBodyWidth: 48rem;
   --hoverFade: 0.25s;
+  --opacityCrossFace: 0.3s;
 
   /* Colors */
   --light:  #FAF9F9; /* rgb(250,249,249) */

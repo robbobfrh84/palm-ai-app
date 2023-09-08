@@ -1,11 +1,19 @@
 function buildColorResultContainer(divide) {
-  resultsSection.innerHTML = /*html*/`
-    <div id="historiclPosition_${_historyCnt}">
-      <span id="historicalDivide_${_historyCnt}" class="divider historicalDivide"></span> 
-      <div id="historical_${_historyCnt}" class="historical"></div>
-      <div id="colorsResult_${_historyCnt}" class="colorResultsContainer"></div>
-    </div>
-  ` + resultsSection.innerHTML
+  // resultsSection.innerHTML = /*html*/`
+  //   <div id="historiclPosition_${_historyCnt}">
+  //     <span id="historicalDivide_${_historyCnt}" class="divider historicalDivide"></span> 
+  //     <div id="historical_${_historyCnt}" class="historical"></div>
+  //     <div id="colorsResult_${_historyCnt}" class="colorResultsContainer"></div>
+  //   </div>
+  // ` + resultsSection.innerHTML
+  const historiclPosition = document.createElement('div')
+  historiclPosition.id = "historiclPosition_"+_historyCnt
+  historiclPosition.innerHTML = /*html*/`
+    <span id="historicalDivide_${_historyCnt}" class="divider historicalDivide"></span> 
+    <div id="historical_${_historyCnt}" class="historical"></div>
+    <div id="colorsResult_${_historyCnt}" class="colorResultsContainer"></div>
+  `
+  resultsSection.prepend(historiclPosition)
 }
 
 function handleColors({ validOutputs, colorObjectArray }, req, resultsObj) {
@@ -107,14 +115,38 @@ function buildHTML(c){
   } 
 
   //
-  //
+  // CREATE A NEW FUNCTION!
+  const saveHistoricalCnt = _historyCnt
   colorElm.addEventListener('click',()=>{
     console.log('c:',c)
-    window["historical_"+_historyCnt].style.height = '1.5rem'
-    window["historical_"+_historyCnt].style.color = 'var(--themeB)'
-    window['historical_'+_historyCnt].style.paddingBottom = '1rem'
+    // window["historical_"+saveHistoricalCnt].style.height = '1.5rem'
+    // window["historical_"+saveHistoricalCnt].style.color = 'var(--themeB)'
+    // window['historical_'+saveHistoricalCnt].style.paddingBottom = '1rem'
+    // window["historical_"+saveHistoricalCnt].innerHTML = c.name + "--" + c.hex
+    
+    clearTimeout(_infoSwitchDelayEvent)
+    clearTimeout(_infoCrossFadeEvent)
 
-    window["historical_"+_historyCnt].innerHTML = c.name + "--" + c.hex
+    footerInitialInfo.style.opacity = 0
+    footerColorInfo.style.opacity = 0
+    const opacityCrossFace = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--opacityCrossFace'))
+    
+    _infoCrossFadeEvent = setTimeout(()=>{
+      footerColorInfo.style.opacity = 1
+      footerColorInfo.innerHTML = /*html*/`
+        ${c.name}
+        <div class="footerColorInfoBall" style="background-color: ${c.hex};"></div>
+        ${c.hex}
+      `
+    }, opacityCrossFace * 1000)
+
+    _infoSwitchDelayEvent = setTimeout(()=>{
+      footerColorInfo.style.opacity = 0
+      setTimeout(()=>{
+        footerInitialInfo.style.opacity = 1
+        footerColorInfo.innerHTML = ""
+      }, opacityCrossFace * 1000)
+    },_infoSwitchDelay)
   })
   //
   //

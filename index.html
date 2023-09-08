@@ -7,7 +7,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
   <link rel="manifest" href="assets/favicon_io/site.webmanifest">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, user-scalable=no" />
   <link rel='stylesheet' href='css/vars.css'>
   <link rel='stylesheet' href='css/base_levels.css'>
   <link rel='stylesheet' href='css/section_navBar.css'>
@@ -27,7 +28,7 @@
     <section id="navBarSection">
 
       <nav id="title" onclick="location.reload()">
-        Color 
+        Color
         <svg id="iconSvg" width="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg>
       </nav>
 
@@ -79,14 +80,21 @@
     <section id="resultsSection"></section>
 
 
-<span class="divider flip"></span> 
-
 <!-- - - - 👠 Footer Section 🥾 - - - -->
-    <section id="footerSection"></section>
+    <section id="footerSection">
+      <span class="divider flip"></span> 
+      <div id="footerInfoContainer">
+        <div id="footerColorInfo"></div>
+        <div id="footerInitialInfo">
+          <a class="footerLink" href="https://github.com/robbobfrh84/palm-ai-app">
+            <span>&bull;</span> About <span>&bull;</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
   </div>
 </body>
-
 
 <script src='js/colors.js'></script>
 <script src='js/toolkit.js'></script>
