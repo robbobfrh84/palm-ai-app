@@ -1,23 +1,16 @@
 /* - - - 👠 Footer Section 🥾 - - - */
 #footerSection {
-  /* flex-shrink: 0; */
-  /* position: relative; */
-  /* position: absolute; */
   position: fixed;
-  /* top: 90vh; */
   left: 0px;
   bottom: 0px;
   width: 100%;
-  /* margin-top: 0.25rem; */
   text-align: center;
-  /* backface-visibility: hidden; */
 }
 #footerInfoContainer {
   background-image: var(--themeA-bg);
   height: 2.5rem;
   transition: background-image var(--pageTansition);
-
-}s
+}
 #footerSection > button { /* * for test buttons */
   margin: 0.25rem;
   background-color: var(--themeA);

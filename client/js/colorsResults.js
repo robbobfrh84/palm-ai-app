@@ -114,16 +114,14 @@ function buildHTML(c){
     colorElm.style.backgroundImage = resultColorTransparent
   } 
 
-  //
-  // CREATE A NEW FUNCTION!
+  createColorClick(c, colorElm)
+  containerElm.appendChild(colorElm)
+  window["colorsResult_"+_historyCnt].appendChild(containerElm)
+}
+
+function createColorClick(c, colorElm) {
   const saveHistoricalCnt = _historyCnt
   colorElm.addEventListener('click',()=>{
-    console.log('c:',c)
-    // window["historical_"+saveHistoricalCnt].style.height = '1.5rem'
-    // window["historical_"+saveHistoricalCnt].style.color = 'var(--themeB)'
-    // window['historical_'+saveHistoricalCnt].style.paddingBottom = '1rem'
-    // window["historical_"+saveHistoricalCnt].innerHTML = c.name + "--" + c.hex
-    
     clearTimeout(_infoSwitchDelayEvent)
     clearTimeout(_infoCrossFadeEvent)
 
@@ -148,11 +146,6 @@ function buildHTML(c){
       }, opacityCrossFace * 1000)
     },_infoSwitchDelay)
   })
-  //
-  //
-
-  containerElm.appendChild(colorElm)
-  window["colorsResult_"+_historyCnt].appendChild(containerElm)
 }
 
 function addColorResultToHistory() {
