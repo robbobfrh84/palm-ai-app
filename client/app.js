@@ -4,6 +4,9 @@ let _loaderOn = false
 let _requestInProgress = false
 let _newInput = false
 let _historyCnt = 0
+let _infoSwitchDelayEvent;
+let _infoCrossFadeEvent;
+const _infoSwitchDelay = 5000 
 const _req_config = { colors: 6, requests: 2 }
 
 const _showTests = false // * If true, will show tests and examples in the footer. 

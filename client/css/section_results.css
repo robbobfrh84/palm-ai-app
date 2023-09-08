@@ -28,6 +28,7 @@
   margin-bottom: 0;
   border-radius: 50%;
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+  cursor: pointer;
   transition: 
     width var(--resultColorTransition), 
     height var(--resultColorTransition), 
@@ -35,7 +36,7 @@
     box-shadow var(--resultColorTransition);
 }
 
-/* 📜 Historical  📜*/
+/* 📜 Historical 📜 */
 .historical {
   position: relative;
   height: 0;
