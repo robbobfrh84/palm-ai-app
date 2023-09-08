@@ -1,4 +1,5 @@
-<svg width="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" >
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="500" height="500" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <style>
     text {
       font-family: Avenir;
@@ -6,10 +7,22 @@
       letter-spacing: 3px;
     }
   </style>
-  <text x="12" y="65"> A.I.</text>
+  <filter id="dropshadow" height="130%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="0.7"/> <!-- stdDeviation is how much to blur -->
+    <feOffset dx="0.5" dy="0.5" result="offsetblur"/> <!-- how much to offset -->
+    <feComponentTransfer>
+      <feFuncA type="linear" slope="0.5"/> <!-- slope is the opacity of the shadow -->
+    </feComponentTransfer>
+    <feMerge> 
+      <feMergeNode/> <!-- this contains the offset blurred image -->
+      <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+    </feMerge>
+  </filter>
+  <circle style="filter:url(#dropshadow)" cx="50" cy="50" r="35" fill="#ddd"/>
+  <text x="12" y="64" style="white-space: pre; font-size: 50px;">A.I.</text>
   <circle cx="12" cy="69" r="7" fill="red"/>
-  <circle cx="29" cy="25" r="7" fill="green" />
-  <circle cx="46" cy="69" r="7" fill="dodgerblue" />
-  <circle cx="73" cy="25" r="7" fill="violet" />
-  <circle cx="73" cy="69" r="7" fill="goldenrod" />
+  <circle cx="29" cy="25" r="7" fill="green"/>
+  <circle cx="46" cy="69" r="7" fill="dodgerblue"/>
+  <circle cx="72.75" cy="25" r="7" fill="violet"/>
+  <circle cx="72.75" cy="69" r="7" fill="goldenrod"/>
 </svg>
