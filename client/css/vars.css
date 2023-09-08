@@ -7,8 +7,8 @@
   --hoverFade: 0.25s;
 
   /* Colors */
-  --light:  #FAF9F9; 
-  --dark: #1C1814; 
+  --light:  #FAF9F9; /* rgb(250,249,249) */
+  --dark: #1C1814;  /* rgb(28,24,20) */
   --themeA: var(--light);
   --themeB: var(--dark);
   --light-bg: url('../assets/light-grain.png'); /* https://bg.siteorigin.com/?color=%23FAF9F9&pattern=beige_paper&blend=3&intensity=13&noise=0&invert=0&2x=0 */

@@ -103,8 +103,21 @@ function buildHTML(c){
   colorElm.style.backgroundColor = c.rgb || ''
   if (!c.rgb && c.name === "transparent") {
     const resultColorTransparent = getComputedStyle(document.documentElement).getPropertyValue('--resultColorTransparent')
-    colorElm.style.backgroundImage =resultColorTransparent
+    colorElm.style.backgroundImage = resultColorTransparent
   } 
+
+  //
+  //
+  colorElm.addEventListener('click',()=>{
+    console.log('c:',c)
+    window["historical_"+_historyCnt].style.height = '1.5rem'
+    window["historical_"+_historyCnt].style.color = 'var(--themeB)'
+    window['historical_'+_historyCnt].style.paddingBottom = '1rem'
+
+    window["historical_"+_historyCnt].innerHTML = c.name + "--" + c.hex
+  })
+  //
+  //
 
   containerElm.appendChild(colorElm)
   window["colorsResult_"+_historyCnt].appendChild(containerElm)
