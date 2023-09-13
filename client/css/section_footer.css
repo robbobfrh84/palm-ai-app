@@ -6,6 +6,11 @@
   width: 100%;
   text-align: center;
 }
+.divider.flip.footer {
+  margin: auto;
+  width: 768px;
+  max-width: 768px;
+}
 #footerInfoContainer {
   background-image: var(--themeA-bg);
   height: 2.5rem;

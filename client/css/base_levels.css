@@ -18,6 +18,12 @@ body {
   width: var(--mainBodyWidth); 
   min-height: 100vh;
 }
+#bottomPadding { /* * Careful editing here. This was added because of the difficulty with mobile sticky footer and is really finiky, where it cuts off historical results on mobile. */
+  position: relative;
+  font-size: 1rem;
+  height: 5rem;
+  min-height: 5rem;
+}
 
 /* 🧑‍🏫 global Classes 🧑‍🏫 */
 .divider {

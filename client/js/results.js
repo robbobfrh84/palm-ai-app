@@ -1,11 +1,4 @@
 function buildColorResultContainer(divide) {
-  // resultsSection.innerHTML = /*html*/`
-  //   <div id="historiclPosition_${_historyCnt}">
-  //     <span id="historicalDivide_${_historyCnt}" class="divider historicalDivide"></span> 
-  //     <div id="historical_${_historyCnt}" class="historical"></div>
-  //     <div id="colorsResult_${_historyCnt}" class="colorResultsContainer"></div>
-  //   </div>
-  // ` + resultsSection.innerHTML
   const historiclPosition = document.createElement('div')
   historiclPosition.id = "historiclPosition_"+_historyCnt
   historiclPosition.innerHTML = /*html*/`

@@ -14,9 +14,10 @@
   <link rel='stylesheet' href='css/section_input.css'>
   <link rel='stylesheet' href='css/section_results.css'>
   <link rel='stylesheet' href='css/section_footer.css'>
-  <link rel='stylesheet' href='css/mobile.css'>
   <link rel='stylesheet' href='css/lightDark.css'>
   <link rel='stylesheet' href='css/loader.css'>
+  <link rel='stylesheet' href='css/section_info.css'>
+  <link rel='stylesheet' href='css/mobile.css'>
 </head> 
 
 
@@ -72,8 +73,15 @@
         </div>
         <button id="enterButton" onclick="get()" >Enter</button> 
       </div>
-
     </section>
+
+
+<!-- - - - 💁 Info Section 💁‍♀️ - - - -->
+    <!-- <section id="infoSection">
+      <div id="infoSectionContainer"></div>
+      <div id="infoSectionText"></div>
+    </section> -->
+
 
 <!-- - - - 🔴🟢🔵 Color Results Section 🔵🟢🔴 - - - -->
     <section id="resultsSection"></section>
@@ -81,7 +89,7 @@
 
 <!-- - - - 👠 Footer Section 🥾 - - - -->
     <section id="footerSection">
-      <span class="divider flip"></span> 
+      <span class="divider flip footer"></span> 
       <div id="footerInfoContainer">
         <div id="footerColorInfo"></div>
         <div id="footerInitialInfo">
@@ -92,16 +100,19 @@
       </div>
     </section>
 
+    <div id="bottomPadding"></div>
+
   </div>
 </body>
 
 <script src='js/colors.js'></script>
 <script src='js/toolkit.js'></script>
 <script src='js/loader.js'></script>
-<script src='js/colorsResults.js'></script>
+<script src='js/results.js'></script>
 <script src='js/toggleLightDark.js'></script>
 <script src='js/examplesTests.js'></script>
 <script src='js/events.js'></script>
 <script src='js/icon.js'></script>
+<script src='js/info.js'></script>
 <script src='app.js'></script>
 </html>
