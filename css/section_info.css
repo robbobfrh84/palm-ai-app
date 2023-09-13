@@ -1,0 +1,72 @@
+/* - - - 💁 Info Section 💁‍♀️ - - - */
+#infoSection {
+  position: relative;
+  margin: auto;
+  margin-top: 3rem;
+}
+#infoSectionContainer {
+  position: relative;
+  border-radius: 2rem;
+  width: 25rem;
+  height: 25rem;
+}
+.infoSectionBorder {
+  position: absolute;
+  border-radius: 2rem;
+  width: 7rem;
+  height: 7rem;
+}
+.infoSectionBorder.topLeft {
+  top: 0px; left: 0px;
+  box-shadow: inset 8px 8px 3px -8px rgba(0,0,0,0.2);
+}
+.infoSectionBorder.topRight {
+  box-shadow: inset -8px 8px 3px -8px rgba(0,0,0,0.2);
+  top: 0px; right: 0px; 
+}
+.infoSectionBorder.bottomRight {
+  bottom: 0px; right: 0px; 
+  box-shadow: inset -8px -8px 3px -8px rgba(0,0,0,0.2);
+}
+.infoSectionBorder.bottomLeft {
+  bottom: 0px; left: 0px;
+  box-shadow: inset 8px -8px 3px -8px rgba(0,0,0,0.2);
+}
+
+#infoSectionText {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  bottom: 3rem;
+  left: 3rem;
+}
+.hide {
+  opacity: 0;
+  transition: opacity 3s;
+}
+.info-chunk {
+  display: inline-block;
+}
+#i_welcome {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+#i_color {
+  padding-top: 2rem;
+}
+
+/* #hand {
+  position: absolute;
+  top: 20px; 
+  left: 20px;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(0deg);
+  background-color: red;
+  transition: transform 0.5s;
+} */
+

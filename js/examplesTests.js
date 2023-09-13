@@ -1,4 +1,4 @@
-const examples = [ // * 👀 formats to oneline > https://www.text-utils.com/json-formatter/
+const _examples = [ // * 👀 formats to oneline > https://www.text-utils.com/json-formatter/
   // reds
   {"thing":"Lava","saved":[{"count":2,"name":"orange","rgb":"rgb(255, 165, 0)","hex":"#ffa500","rank":1},{"count":3,"name":"red","rgb":"rgb(255, 0, 0)","hex":"#ff0000","rank":2},{"count":2,"name":"yellow","rgb":"rgb(255, 255, 0)","hex":"#ffff00","rank":3},{"count":2,"name":"orangered","rgb":"rgb(255, 69, 0)","hex":"#ff4500","rank":4},{"count":2,"name":"maroon","rgb":"rgb(128, 0, 0)","hex":"#800000","rank":5}]},  
   // greens
@@ -13,7 +13,7 @@ const examples = [ // * 👀 formats to oneline > https://www.text-utils.com/jso
   {"thing":"Golden Gate","saved":[{"count":2,"name":"gold","rgb":"rgb(255, 215, 0)","hex":"#ffd700","rank":1},{"count":2,"name":"orange","rgb":"rgb(255, 165, 0)","hex":"#ffa500","rank":2},{"count":2,"name":"brown","rgb":"rgb(165, 42, 42)","hex":"#a52a2a","rank":3},{"count":1,"name":"yellow","rgb":"rgb(255, 255, 0)","hex":"#ffff00","rank":4},{"count":1,"name":"black","rgb":"rgb(0, 0, 0)","hex":"#000000","rank":5},{"count":1,"name":"silver","rgb":"rgb(192, 192, 192)","hex":"#c0c0c0","rank":6},{"count":1,"name":"gray","rgb":"rgb(128, 128, 128)","hex":"#808080","rank":7}]},
   // clears
   {"thing":"Glass","saved":[{"count":2,"name":"transparent","rank":1},{"count":2,"name":"gray","rgb":"rgb(128, 128, 128)","hex":"#808080","rank":2},{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":3},{"count":2,"name":"silver","rgb":"rgb(192, 192, 192)","hex":"#c0c0c0","rank":4},{"count":1,"name":"lightblue","rgb":"rgb(173, 216, 230)","hex":"#add8e6","rank":5},{"count":1,"name":"lightgreen","rgb":"rgb(144, 238, 144)","hex":"#90ee90","rank":6}]},  
-  {"thing":"Clouds","saved":[{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":1},{"count":2,"name":"gray","rgb":"rgb(128, 128, 128)","hex":"#808080","rank":2},{"count":2,"name":"transparent","rank":3}]},{"thing":"Clouds","saved":[{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":1},{"count":2,"name":"gray","rgb":"rgb(128, 128, 128)","hex":"#808080","rank":2},{"count":2,"name":"transparent","rank":3}]},  
+  {"thing":"Clouds","saved":[{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":1},{"count":2,"name":"gray","rgb":"rgb(128, 128, 128)","hex":"#808080","rank":2},{"count":2,"name":"transparent","rank":3}]},
   // darks
   {"thing":"Gothic","saved":[{"count":2,"name":"black","rgb":"rgb(0, 0, 0)","hex":"#000000","rank":1},{"count":2,"name":"gray","rgb":"rgb(128, 128, 128)","hex":"#808080","rank":2},{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":3},{"count":2,"name":"silver","rgb":"rgb(192, 192, 192)","hex":"#c0c0c0","rank":4},{"count":1,"name":"red","rgb":"rgb(255, 0, 0)","hex":"#ff0000","rank":5},{"count":1,"name":"maroon","rgb":"rgb(128, 0, 0)","hex":"#800000","rank":6}]},
   // pastel
@@ -33,19 +33,20 @@ const examples = [ // * 👀 formats to oneline > https://www.text-utils.com/jso
   {"thing":"Popcorn","saved":[{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":1},{"count":2,"name":"yellow","rgb":"rgb(255, 255, 0)","hex":"#ffff00","rank":2},{"count":2,"name":"orange","rgb":"rgb(255, 165, 0)","hex":"#ffa500","rank":3},{"count":1,"name":"brown","rgb":"rgb(165, 42, 42)","hex":"#a52a2a","rank":4},{"count":1,"name":"tan","rgb":"rgb(210, 180, 140)","hex":"#d2b48c","rank":5}]},
   {"thing":"Castle","saved":[{"count":2,"name":"gray","rgb":"rgb(128, 128, 128)","hex":"#808080","rank":1},{"count":2,"name":"white","rgb":"rgb(255, 255, 255)","hex":"#ffffff","rank":2},{"count":1,"name":"beige","rgb":"rgb(245, 245, 220)","hex":"#f5f5dc","rank":3},{"count":2,"name":"silver","rgb":"rgb(192, 192, 192)","hex":"#c0c0c0","rank":4},{"count":2,"name":"brown","rgb":"rgb(165, 42, 42)","hex":"#a52a2a","rank":5},{"count":1,"name":"black","rgb":"rgb(0, 0, 0)","hex":"#000000","rank":6}]},
 ]
+const _deck = { unused: [], startDeck: shuffle([..._examples]) }
 
-const tests = [ 'cat', 'pig', 'bird', 'trees' ]
+const _tests = [ 'cat', 'pig', 'bird', 'trees' ]
 
 function buildTests() {
   if (_showTests) {
     footerSection.innerHTML = /*html*/ `Tests:`
-    tests.forEach( test => {
+    _tests.forEach( test => {
       footerSection.innerHTML += /*html*/`
         <button onclick="get('${test}')">${test}</button>
       `
     })
     footerSection.innerHTML += /*html*/` - Examples (real requests):`
-    examples.forEach( example => {
+    _examples.forEach( example => {
       footerSection.innerHTML += /*html*/`
         <button onclick="get('${example.thing}')">${example.thing}</button>
       `
@@ -68,10 +69,25 @@ function randomExample() {
     addColorResultToHistory()
   }
   _newInput = true
-  turnOnLoader() 
   toggleButtonsDisabled(true)
-  const { thing, saved } = examples[random(0, examples.length - 1)]
-  falseInputText.innerHTML = thing
+  if (_deck.unused.length == 0) {
+    _deck.unused = [..._deck.startDeck]
+  }
+  const draw = _deck.unused.shift()
+  const { thing, saved } = draw
+  falseInputText.innerHTML = ''
+  let typeDelay = 0
+  thing.split('').forEach(l=>{
+    const sl = l
+    typeDelay += random(50,120)
+    const saveDelay = typeDelay 
+    setTimeout(()=>{
+      falseInputText.innerHTML += sl
+    }, typeDelay )
+  })
+  setTimeout(()=>{
+    turnOnLoader()
+  }, typeDelay )
   real_input.value = thing
   let delay = 1000
   saved.forEach( (c, i) => {
@@ -87,3 +103,4 @@ function randomExample() {
     }
   })
 }
+

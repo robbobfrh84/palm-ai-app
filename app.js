@@ -37,6 +37,7 @@ window.onload = ()=>{
   buildTests()
   buildSVGIcon()
   buildColorResultContainer()
+  // startInfoBuild()
   real_input.focus()
 }
 
