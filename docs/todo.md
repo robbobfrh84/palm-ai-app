@@ -1,15 +1,11 @@
 # Where I Left Off
 -
-# To Do ✅ 🟡
-Dark Mode 
-- ...
 
-Finalize
-- BIG review of code base. Each file, search for logs. 
+# To Do ✅ 🟡
+-
 
 * 🚨 Don't forget to update **server** if/when you make changes!!!
 ----
-
 
 # MVP+
 - Add SEO? Next JS? 
@@ -23,6 +19,7 @@ Finalize
   - update on get()
 
 # MVP++
+- Make iOS App
 
 # Saved Resources
 - overflow input: https://codepen.io/BastionTheDev/pen/mvrvbX?editors=0110
