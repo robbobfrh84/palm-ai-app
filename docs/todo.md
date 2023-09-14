@@ -1,10 +1,7 @@
 # Where I Left Off
 -
 # To Do ✅ 🟡
-- ✅ Add .png arrows
-- ✅ (REVIEW) ? delay delay fade in of paragraphs 2 & 3...??
-- ✅ Remove (fadeout) info when Enter pressed. 
-- 🔼 Pretty much got done with MVP!
+- 🟡 Pretty much got done with MVP!
   - review PUSH
   - Remove Notes PUSH
 - Dark Mode Reviews...

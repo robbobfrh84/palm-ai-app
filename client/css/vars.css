@@ -8,7 +8,6 @@
   --opacityCrossFade: 0.3s;
   --opacitySlowFade: 2s;
 
-
   /* Colors */
   --light:  #FAF9F9; /* rgb(250,249,249) */
   --dark: #1C1814;  /* rgb(28,24,20) */
@@ -24,8 +23,6 @@
   --dark-arrow: url('../assets/light-arrow.png'); 
   --themeA-arrow: var(--light-arrow);
   --themeB-arrow: var(--dark-arrow);
-
-
 
   /* Input, Enter and loader */
   --inputWidth: 75%;

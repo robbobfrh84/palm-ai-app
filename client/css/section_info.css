@@ -52,11 +52,7 @@
 }
 #infoTitle {
   font-size: 1.25rem;
-  /* letter-spacing: 0.1rem; */
   text-align: center;
-}
-#infoText {
-  /* letter-spacing: 0.07rem; */
 }
 .example-link {
   text-decoration: underline;
