@@ -1,46 +1,74 @@
-const _i = [
-  { name: 'border', d: 500 }, // 🔥 Wait quite a bit longer 3-5 sec.
-  { name: 'welcome', d: 1000, t: "Welcome", b:"<br" },
-  { name: 'color', d: 300, t: "To Color A.I., " },
-
-  { d: 2000, t: "Enter any word" },
-  { d: 300, t: "to see what", b:"<br>" },
-  { d: 300, t: "colors A.I. finds related to it.", b:"<br><br>" },
-  { d: 200, t: "Or, click" },
-  { d: 300, t: "👉Examples👈", b:"<br><br>" },
-  { d: 1000, t: "You can even try using emojies 😍" },
-]
-
 function startInfoBuild() {
-  _i.forEach((k, i)=>{
-    // const obj = _i[k]
-    console.log('k:',k)
-    if (k.name === "border") {
-      infoSectionContainer.innerHTML += /*html*/`
-        <div id="i_${(k.name || i)}" class="hide">
-          <div class="infoSectionBorder topLeft"></div>
-          <div class="infoSectionBorder topRight"></div>
-          <div class="infoSectionBorder bottomRight"></div>
-          <div class="infoSectionBorder bottomLeft"></div>
-        </div>
-      `
-    } else {
-      infoSectionText.innerHTML += /*html*/`
-        <div id="i_${(k.name || i)}" class="hide info-chunk">${k.t}</div>
-        ${ k.b ? k.b : "" }
-      `
-    }
-  })
+  const infoBorder = document.createElement('div')
+  infoBorder.classList.add('hide')
+  infoBorder.id = "infoBorder"
+  infoBorder.innerHTML += /*html*/`
+    <div class="infoSectionBorder topLeft"></div>
+    <div class="infoSectionBorder topRight"></div>
+    <div class="infoSectionBorder bottomRight"></div>
+    <div class="infoSectionBorder bottomLeft"></div>
+  `
+  infoSectionContainer.append(infoBorder)
 
-  animateInfoSection()
+  const infoTitle = document.createElement('div')
+  infoTitle.classList.add('hide')
+  infoTitle.id = "infoTitle"
+  infoTitle.innerHTML += /*html*/`Welcome to Color A.I. `
+  infoSectionText.append(infoTitle)
+
+  const infoText = document.createElement('div')
+  infoText.id = "infoText"
+  infoText.innerHTML += /*html*/`
+
+    <div id="infoText_1" class="hide">
+      <br>
+      Enter a word, and watch the associated colors generate.
+    </div>
+
+    <br>
+
+    <div id="infoText_2" class="hide">
+           
+      <span class='before-arrows-text'>Or, click</span>      
+      <span class='pulse-arrow left'>.</span>
+      <span class="example-link" onclick="randomExample()">Examples</span>
+      <span class='pulse-arrow right'>.</span>
+      <span class='after-arrows-text'>to get a random word.</span>      
+    </div>
+
+    <br>
+
+    <div id="infoText_3" class="hide">You can even enter emojis.
+      <span id='pulseEmoji' onclick="get('🍇')">🍇</span>
+    </div>      
+  `
+  infoSectionText.append(infoText)
+
+  fadeInInfoCard()
 
 }
 
-function animateInfoSection() {
-  let d = 0
-  _i.forEach((k, i)=>{
-    d+=k.d
-    const sd = d
-    setTimeout(()=>{ window["i_"+(k.name || i)].style.opacity = 1 }, sd); 
-  })
+function fadeInInfoCard() {
+  let pageTransition = _delayInfoCard
+  
+  setTimeout(()=>{
+    infoBorder.classList.add("show-full")
+  }, pageTransition) 
+
+  setTimeout(()=>{
+    infoTitle.classList.add("show-dim")
+  }, pageTransition += 1000) 
+
+  setTimeout(()=>{
+    infoText_1.classList.add("show-dim")
+  }, pageTransition += 1000) 
+
+  setTimeout(()=>{
+    infoText_2.classList.add("show-dim")
+  }, pageTransition += 300) 
+
+  setTimeout(()=>{
+    infoText_3.classList.add("show-dim")
+  }, pageTransition += 300) 
+
 }

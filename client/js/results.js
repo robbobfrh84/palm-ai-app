@@ -115,12 +115,12 @@ function buildHTML(c){
 function createColorClick(c, colorElm) {
   const saveHistoricalCnt = _historyCnt
   colorElm.addEventListener('click',()=>{
-    clearTimeout(_infoSwitchDelayEvent)
+    clearTimeout(_colorInfoSwitchDelayEvent)
     clearTimeout(_infoCrossFadeEvent)
 
     footerInitialInfo.style.opacity = 0
     footerColorInfo.style.opacity = 0
-    const opacityCrossFace = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--opacityCrossFace'))
+    const opacityCrossFade = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--opacityCrossFade'))
     
     _infoCrossFadeEvent = setTimeout(()=>{
       footerColorInfo.style.opacity = 1
@@ -129,15 +129,15 @@ function createColorClick(c, colorElm) {
         <div class="footerColorInfoBall" style="background-color: ${c.hex};"></div>
         ${c.hex}
       `
-    }, opacityCrossFace * 1000)
+    }, opacityCrossFade * 1000)
 
-    _infoSwitchDelayEvent = setTimeout(()=>{
+    _colorInfoSwitchDelayEvent = setTimeout(()=>{
       footerColorInfo.style.opacity = 0
       setTimeout(()=>{
         footerInitialInfo.style.opacity = 1
         footerColorInfo.innerHTML = ""
-      }, opacityCrossFace * 1000)
-    },_infoSwitchDelay)
+      }, opacityCrossFade * 1000)
+    },_colorInfoSwitchDelay)
   })
 }
 

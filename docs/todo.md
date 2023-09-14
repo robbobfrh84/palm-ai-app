@@ -1,45 +1,29 @@
 # Where I Left Off
-- 
-
+-
 # To Do ✅ 🟡
-✅ Need to add some margin bottom to MOBILE historical. Get's covered.. 
-✅ Make mobille historical font smaller "California Golden Bears"
-✅ Let's make our examples shuffle. then just go in order, then repeat?
-🟡 Create a Type-annimcation effect! 
-
-
-⭐️ Directions
-- decide on a good style and wording (maybe animations with arrows)
-
----
-
-Dark Mode Reviews...
-- ? Is the false input color our themes? looks to be hardcoded???
-- Drop shaddows need to adjust for dark mode. 
+- ✅ Add .png arrows
+- ✅ (REVIEW) ? delay delay fade in of paragraphs 2 & 3...??
+- ✅ Remove (fadeout) info when Enter pressed. 
+- 🔼 Pretty much got done with MVP!
+  - review PUSH
+  - Remove Notes PUSH
+- Dark Mode Reviews...
+  - Drop shaddows need to adjust for dark mode. 
 
 Finalize
+- test mobile. 
 - Readme and repo updaes
   - Review readme
   - add link to colorai.farm
-  - Add wireframe picks to docs/screenshots
-- refactor -> push and test mobile. 
-- 🚨 Don't forget to update **server** if/when you make changes!!!
-
-### Tests (Add to README.md)
-- Onload should focus input:
-- Click out + Click in - check cursor alignment.
-- Add text > CLick out click in - check cursor alignment.
-  - Zero text out > CLick out click in - check cursor alignment.
-- Enter Word + Search with enter
-- Enter Word + Click Enter
-- Leave Empty and + Search with enter
-
-----
+- BIG review of code base. Each file, search for logs. 
 
 ### Bonus: After Online-presence update
 - Cap Historical results? 5? 10? ...20?
-- ? onload "Color" shimmer effect: https://codepen.io/DavidQuintanilla/pen/egbedd?editors=0110
-- ? Add fade-in effects for line break under navBar.
+- Add fade-in effects for line break under navBar.
+
+* 🚨 Don't forget to update **server** if/when you make changes!!!
+----
+
 
 # MVP+
 - Add SEO? Next JS? 

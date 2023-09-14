@@ -4,9 +4,10 @@ let _loaderOn = false
 let _requestInProgress = false
 let _newInput = false
 let _historyCnt = 0
-let _infoSwitchDelayEvent;
+let _colorInfoSwitchDelayEvent;
 let _infoCrossFadeEvent;
-const _infoSwitchDelay = 5000 
+const _colorInfoSwitchDelay = 5000 
+const _delayInfoCard = 3000
 const _req_config = { colors: 6, requests: 2 }
 
 const _showTests = false // * If true, will show tests and examples in the footer. 
@@ -37,7 +38,7 @@ window.onload = ()=>{
   buildTests()
   buildSVGIcon()
   buildColorResultContainer()
-  // startInfoBuild()
+  startInfoBuild()
   real_input.focus()
 }
 
@@ -49,6 +50,8 @@ function switchDarkLightTheme() {
   document.documentElement.style.setProperty('--themeB', 'var(--'+themeA+')');
   document.documentElement.style.setProperty('--themeA-bg', 'var(--'+themeB+'-bg)');
   document.documentElement.style.setProperty('--themeB-bg', 'var(--'+themeA+'-bg)');
+  document.documentElement.style.setProperty('--themeA-arrow', 'var(--'+themeB+'-arrow)');
+  document.documentElement.style.setProperty('--themeB-arrow', 'var(--'+themeA+'-arrow)');
   toggleLightDark()
 }
 
@@ -70,6 +73,10 @@ function toggleButtonsDisabled(status) {
   enterButton.style.cursor = status ? 'default' : 'pointer'
   examplesButton.style.pointerEvents = status ? 'none' : ''
   examplesButton.style.cursor = status ? 'default' : 'pointer'
+  infoSection.style.opacity = 0
+  setTimeout(()=>{
+   infoSection.style.display = "none"
+  },300)
 }
 
 
@@ -79,19 +86,22 @@ function get(thing, resultsObj, keep){
     clearAllChildren(window["colorsResult_"+_historyCnt])
     window["colorsResult_"+_historyCnt].style.height = 0
   }
-  if ( (!_requestInProgress || keep) && real_input.value != "" ) {
+  if ( (!_requestInProgress || keep) && (real_input.value != "" || thing) ) {
+
     _requestInProgress = true
+    toggleButtonsDisabled(true)
+    turnOnLoader()
+
     if (thing) { 
       real_input.value = thing 
       falseInputText.innerHTML = thing
     }
-    toggleButtonsDisabled(true)
-    turnOnLoader()
     const request = {
       thing: thing || real_input.value,
       colors: _req_config.colors,
       requests: _req_config.requests
     }
+
     const urlString = _URL+request.thing+"/"+request.colors
     fetch(urlString)
       .then( res => res.json())

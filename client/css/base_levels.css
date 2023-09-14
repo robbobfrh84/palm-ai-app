@@ -3,13 +3,13 @@
   font-size: var(--root-font-size); 
   color: var(--themeB); 
   font-family: Avenir, sans-serif;
-  transition: color var(--pageTansition); 
+  transition: color var(--pageTransition); 
 }
 body {
   background-image: var(--themeA-bg);
   margin: 0;
   opacity: 0;
-  transition: background-image var(--pageTansition), background-color var(--pageTansition), opacity var(--pageTansition);
+  transition: background-image var(--pageTransition), background-color var(--pageTransition), opacity var(--pageTransition);
 }
 #mainBody {
   display: flex;
@@ -23,6 +23,10 @@ body {
   font-size: 1rem;
   height: 5rem;
   min-height: 5rem;
+}
+.hide {
+  opacity: 0;
+  transition: opacity var(--opacitySlowFade);
 }
 
 /* 🧑‍🏫 global Classes 🧑‍🏫 */
