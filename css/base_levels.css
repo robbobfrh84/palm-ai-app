@@ -31,15 +31,16 @@ body {
 
 /* 🧑‍🏫 global Classes 🧑‍🏫 */
 .divider {
-  box-shadow: inset 1px 5px 9px -6px rgba(0,0,0,1);
+  box-shadow: var(--themeA-dividerBoxShadow);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   display: block;
   height: 10px;
   width: 100%;
+  transition: box-shadow var(--opacitySlowFade);
 }
 .divider.flip {
-  box-shadow: inset 1px -5px 9px -6px rgba(0,0,0,1);
+  box-shadow: var(--themeA-dividerBoxShadow-flip);
 }
 
 

@@ -46,13 +46,7 @@ function switchDarkLightTheme() {
   const themeA = _theme
   _theme = _theme === 'light' ? 'dark' : 'light'
   const themeB = _theme
-  document.documentElement.style.setProperty('--themeA', 'var(--'+themeB+')');
-  document.documentElement.style.setProperty('--themeB', 'var(--'+themeA+')');
-  document.documentElement.style.setProperty('--themeA-bg', 'var(--'+themeB+'-bg)');
-  document.documentElement.style.setProperty('--themeB-bg', 'var(--'+themeA+'-bg)');
-  document.documentElement.style.setProperty('--themeA-arrow', 'var(--'+themeB+'-arrow)');
-  document.documentElement.style.setProperty('--themeB-arrow', 'var(--'+themeA+'-arrow)');
-  toggleLightDark()
+  toggleLightDark(themeA, themeB)
 }
 
 function checkLoaderOff(requestCnt, lastDelay) {

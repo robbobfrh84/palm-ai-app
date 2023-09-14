@@ -29,19 +29,19 @@
 }
 .infoSectionBorder.topLeft {
   top: 0px; left: 0px;
-  box-shadow: inset 8px 8px 3px -8px rgba(0,0,0,0.2);
+  box-shadow: inset 8px 8px 3px -8px var(--themeA-infoBorderColor);
 }
 .infoSectionBorder.topRight {
-  box-shadow: inset -8px 8px 3px -8px rgba(0,0,0,0.2);
   top: 0px; right: 0px; 
+  box-shadow: inset -8px 8px 3px -8px var(--themeA-infoBorderColor);
 }
 .infoSectionBorder.bottomRight {
   bottom: 0px; right: 0px; 
-  box-shadow: inset -8px -8px 3px -8px rgba(0,0,0,0.2);
+  box-shadow: inset -8px -8px 3px -8px var(--themeA-infoBorderColor);
 }
 .infoSectionBorder.bottomLeft {
   bottom: 0px; left: 0px;
-  box-shadow: inset 8px -8px 3px -8px rgba(0,0,0,0.2);
+  box-shadow: inset 8px -8px 3px -8px var(--themeA-infoBorderColor);
 }
 
 #infoSectionText {
