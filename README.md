@@ -4,7 +4,7 @@ An application built using the PaLM API, the App is a fun color generator game t
 
 ##### Live Links 🎙️
 
-- Front-end Web Application: (colorai.farm)[https://colorai.farm]
+- Front-end Web Application: [colorai.farm](https://colorai.farm)
   - Re-routed from: https://robbobfrh84.github.io/palm-ai-app/
 - Server: https://palm-ai-app.uw.r.appspot.com/
 
