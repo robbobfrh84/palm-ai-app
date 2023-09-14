@@ -2,20 +2,30 @@
 
   /* ⛺️ Base Levels ⛺️*/
   --root-font-size: 16px; 
-  --pageTansition: 2s;
+  --pageTransition: 2s;
   --mainBodyWidth: 48rem;
   --hoverFade: 0.25s;
-  --opacityCrossFace: 0.3s;
+  --opacityCrossFade: 0.3s;
+  --opacitySlowFade: 2s;
+
 
   /* Colors */
   --light:  #FAF9F9; /* rgb(250,249,249) */
   --dark: #1C1814;  /* rgb(28,24,20) */
   --themeA: var(--light);
   --themeB: var(--dark);
+
   --light-bg: url('../assets/light-grain.png'); /* https://bg.siteorigin.com/?color=%23FAF9F9&pattern=beige_paper&blend=3&intensity=13&noise=0&invert=0&2x=0 */
   --dark-bg: url('../assets/dark-grain.png'); /* https://bg.siteorigin.com/?color=%231C1814&pattern=beige_paper&blend=3&intensity=13&noise=0&invert=0&2x=0 */
   --themeA-bg: var(--light-bg);
   --themeB-bg: var(--dark-bg);
+
+  --light-arrow: url('../assets/dark-arrow.png'); 
+  --dark-arrow: url('../assets/light-arrow.png'); 
+  --themeA-arrow: var(--light-arrow);
+  --themeB-arrow: var(--dark-arrow);
+
+
 
   /* Input, Enter and loader */
   --inputWidth: 75%;

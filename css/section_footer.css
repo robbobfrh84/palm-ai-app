@@ -14,7 +14,7 @@
 #footerInfoContainer {
   background-image: var(--themeA-bg);
   height: 2.5rem;
-  transition: background-image var(--pageTansition);
+  transition: background-image var(--pageTransition);
 }
 #footerSection > button { /* * for test buttons */
   margin: 0.25rem;
@@ -22,7 +22,7 @@
 }
 #footerInitialInfo {
   opacity: 1;
-  transition: opacity var(--opacityCrossFace);
+  transition: opacity var(--opacityCrossFade);
 }
 .footerLink {
   font-size: 1.125rem;
@@ -37,7 +37,7 @@
   font-size: 1.125rem;
   line-height: 2.5rem;
   opacity: 0;
-  transition: opacity var(--opacityCrossFace);
+  transition: opacity var(--opacityCrossFade);
 }
 .footerColorInfoBall {
   display: inline-block;

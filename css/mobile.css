@@ -48,6 +48,18 @@
   .historical {
     font-size: 1.5rem;
   }
+  #infoSection {
+    margin-top: 4rem;
+  }
+  #infoSectionContainer {
+    width: 20rem;
+    height: 16.125rem;
+  }
+  #infoSectionText {
+    top: 1.5rem;
+    right: 1.5rem;
+    left: 1.5rem;
+  }
   #loader1 {
     top: 2.3rem !important;
   }
