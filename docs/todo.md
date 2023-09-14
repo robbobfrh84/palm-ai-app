@@ -1,22 +1,11 @@
 # Where I Left Off
 -
 # To Do ✅ 🟡
-- 🟡 Pretty much got done with MVP!
-  - review PUSH
-  - Remove Notes PUSH
-- Dark Mode Reviews...
-  - Drop shaddows need to adjust for dark mode. 
+Dark Mode 
+- ...
 
 Finalize
-- test mobile. 
-- Readme and repo updaes
-  - Review readme
-  - add link to colorai.farm
 - BIG review of code base. Each file, search for logs. 
-
-### Bonus: After Online-presence update
-- Cap Historical results? 5? 10? ...20?
-- Add fade-in effects for line break under navBar.
 
 * 🚨 Don't forget to update **server** if/when you make changes!!!
 ----
@@ -27,6 +16,7 @@ Finalize
 - Make click+copy popup clipboard of all colors
   - make a hover event to replace "click" for individual colors
   - Maybe an icon or some UI to click. 
+- Cap Historical results? 5? 10? ...20?
 - Add Hash
   - add hash requests that auto fire on load `#River`
   - update title `Color A.I. - River`

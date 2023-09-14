@@ -24,11 +24,50 @@
   --themeA-arrow: var(--light-arrow);
   --themeB-arrow: var(--dark-arrow);
 
+  --light-dividerBoxShadow: inset 1px 5px 9px -6px rgba(0,0,0,1);
+  --dark-dividerBoxShadow: inset 1px 5px 9px -6px rgba(255,255,255,1);
+  --themeA-dividerBoxShadow: var(--light-dividerBoxShadow);
+  --themeB-dividerBoxShadow: var(--dark-dividerBoxShadow);
+
+  --light-dividerBoxShadow-flip: inset 1px -5px 9px -6px rgba(0,0,0,1);
+  --dark-dividerBoxShadow-flip: inset 1px -5px 9px -6px rgba(255,255,255,1);
+  --themeA-dividerBoxShadow-flip: var(--light-dividerBoxShadow-flip);
+  --themeB-dividerBoxShadow-flip: var(--light-dividerBoxShadow-flip);
+
+  /* Toggle */
+  --width: 50px; 
+  --height: 25px; 
+  --toggleTransition: 2s;
+
   /* Input, Enter and loader */
   --inputWidth: 75%;
   --inputTextSize: 2rem;
   --inputBackgroundColor: rgba(0,0,0,0);
-  --inputBoxShadow: inset 0px 0px 3px 3px rgba(0,0,0,0.5), 0px 0px 0px 0px rgba(0,0,0,0.5);
+
+  --light-inputBorderColor: 0.2rem solid rgba(0,0,200,0.3); 
+  --dark-inputBorderColor: 0.2rem solid rgba(0,191,255,0.75); 
+  --themeA-inputBorderColor: var(--light-inputBorderColor); 
+  --themeB-inputBorderColor: var(--dark-inputBorderColor); 
+
+  --light-inputBoxShadow: inset 0px 0px 3px 3px rgba(0,0,0,0.5), 0px 0px 0px 0px rgba(0,0,0,0.5);
+  --dark-inputBoxShadow: inset 0px 0px 3px 3px rgba(255,255,255,0.5), 0px 0px 0px 0px rgba(255,255,255,0.5); 
+  --themeA-inputBoxShadow: var(--light-inputBoxShadow); 
+  --themeB-inputBoxShadow: var(--dark-inputBoxShadow); 
+  --light-inputBoxShadow-shift: inset 0px 0px 0px 0px rgba(0,0,0,0), 0px 0px 3px 3px rgba(0,0,0,0.25);
+  --dark-inputBoxShadow-shift: inset 0px 0px 0px 0px rgba(255,255,255,0), 0px 0px 3px 3px rgba(255,255,255,0.25); 
+  --themeA-inputBoxShadow-shift: var(--light-inputBoxShadow-shift); 
+  --themeB-inputBoxShadow-shift: var(--dark-inputBoxShadow-shift); 
+
+  --buttonBoxShadow: inset 0px 0px 0px 0px rgba(0,0,0,0.3), 2px 2px 2px rgba(0,0,0,0.25);
+  --light-buttonBoxShadow-shift: inset 0px 0px 2px 2px rgba(0,0,0,0.3), 0px 0px 0px rgba(0,0,0,0.25);
+  --dark-buttonBoxShadow-shift: inset 0px 0px 2px 2px rgba(255,255,255,0.3), 0px 0px 0px rgba(255,255,255,0.25); 
+  --themeA-buttonBoxShadow-shift: var(--light-buttonBoxShadow-shift); 
+  --themeB-buttonBoxShadow-shift: var(--dark-buttonBoxShadow-shift); 
+
+  --light-cursor: rgba(200,0,0,0.25);
+  --dark-cursor: rgba(200,0,0,0.75);
+  --themeA-cursor: var(--light-cursor);
+  --themeB-cursor: var(--dark-cursor);
 
   --highlightBorderFade: 0.5s;
   --boxShadowFades: 1s;
@@ -44,9 +83,10 @@
   --historicalGapGrows: 0.5s;
   --historicalColorFade: 2s;
 
-  /* Toggle */
-  --width: 50px; 
-  --height: 25px; 
-  --toggleTransition: 2s;
+  /* Info Section */
+  --light-infoBorderColor: rgba(0,0,0,0.2);
+  --dark-infoBorderColor: rgba(255,255,255,0.2);
+  --themeA-infoBorderColor: var(--light-infoBorderColor);
+  --themeB-infoBorderColor: var(--dark-infoBordeColorr);
 
 }

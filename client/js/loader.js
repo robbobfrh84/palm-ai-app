@@ -4,9 +4,12 @@ function turnOnLoader() {
 
   enterButton.style.color = "rgba(0,0,0,0)"
   setTimeout(()=>{
-    enterButton.style.boxShadow = "inset 0px 0px 2px 2px rgba(0,0,0,0.3), 0px 0px 0px rgba(0,0,0,0.25)"
+    const themeAButtonBoxShadowShift = getComputedStyle(document.documentElement).getPropertyValue('--themeA-buttonBoxShadow-shift')
+    enterButton.style.boxShadow = themeAButtonBoxShadowShift
     enterButton.style.backgroundColor = "rgba(255,255,255,0)"
-    falseInputContainer.style.boxShadow = "inset 0px 0px 0px 0px rgba(0,0,0,0), 0px 0px 3px 3px rgba(0,0,0,0.25)"
+
+    const themeAInputBoxShadowShift = getComputedStyle(document.documentElement).getPropertyValue('--themeA-inputBoxShadow-shift')
+    falseInputContainer.style.boxShadow = themeAInputBoxShadowShift
     falseInputContainer.style.backgroundColor = "rgba(0,0,0,0.075)"
   },500)
 
