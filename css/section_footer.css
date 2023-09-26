@@ -5,6 +5,7 @@
   bottom: 0px;
   width: 100%;
   text-align: center;
+  z-index: 1;
 }
 .divider.flip.footer {
   margin: auto;
