@@ -32,7 +32,7 @@ window.onload = ()=>{
     || clientURL === "https://colorai.farm/"
     || hash === "#prod") 
   {
-    _URL = "https://palm-ai-app.uw.r.appspot.com/"
+    _URL = "https://gemini-api-437519.wl.r.appspot.com/"
   }
   getInitialVars()
   buildTests()
