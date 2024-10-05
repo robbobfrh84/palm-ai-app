@@ -40,6 +40,9 @@ NOTE: the default API url is `http://localhost:8080/`. If you'd like to use the 
 # 🚀 Deployment 🚀
 This project uses Google App Engine. I wrote this [blog post](https://medium.com/@bobmain49/node-js-app-engine-with-google-cli-getting-started-guide-2023-556a4805cebd) about setting that up. Also, see this [blog post](https://medium.com/@bobmain49/dealing-with-sh-gcloud-command-not-found-after-setting-up-gcloud-cli-5e11b9290e6) if you're having issues with the `gcloud` command not being found. Once that's set up all you'll need to do is run these commands to deploy. 
 
+NOTE: To get your API URL run the following command to open the URL in the browser.
+- `gcloud app browse`
+
 ##### Deploying Front End 
 
 This app is setup to deploy from the `client` subfolder. And, the branch `gh-pages` was made to handle that. So pushing to the main branch **will not** deploy changes to the front end. You'll need to run this command to do that. Which will trigger Github's actions to update your code and deploy the changes.
