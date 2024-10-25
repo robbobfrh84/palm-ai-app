@@ -10,12 +10,12 @@ An application built using the ~~PaLM API~~ (Update to Gemini API), the App is a
 
 - Front-end Web Application: [colorai.farm](https://colorai.farm)
   - Re-routed from: https://robbobfrh84.github.io/palm-ai-app/
-- Server: https://palm-ai-app.uw.r.appspot.com/
+- Server: https://gemini-api-437519.wl.r.appspot.com/
 
 ##### Where Code is Hosted 🍦
 
 - Front End Web App from this repo on GitHub: https://github.com/robbobfrh84/palm-ai-app
-- Back End API on Google Cloud Developer's App Engine: https://console.cloud.google.com/home/dashboard?project=palm-ai-app
+- Back End API on Google Cloud Developer's App Engine: https://console.cloud.google.com/appengine?project=gemini-api-437519&serviceId=default
 
 ----
 
@@ -58,7 +58,7 @@ This app is setup to deploy from the `client` subfolder. And, the branch `gh-pag
 
 - `cd server`
 - `gcloud app deploy` 
-  - Live URL: https://palm-ai-app.uw.r.appspot.com/
+  - Live URL: https://gemini-api-437519.wl.r.appspot.com/
 
 - Then, you can run `gcloud app browse` to open the root url in a browser window.
 - And, you can even watch the live logs with `gcloud app logs tail -s default`
