@@ -37,7 +37,11 @@ const reqTextPrompt = function( thing, colors ) {
     });
   
     chatSession.sendMessage(promptString).then(result => {
-      const outputs = JSON.parse(result.response.text())
+      let outputs = JSON.parse(result.response.text())
+      console.log('🚨 thing, outputs:',thing, outputs)
+      if (!outputs.length > 0) {
+        outputs = outputs[thing]
+      } 
       const { validOutputs, invalidOutputs } = isValidColors(outputs)
       resolve({ outputs, invalidOutputs, validOutputs })
     });
