@@ -1,6 +1,7 @@
-function buildColorResultContainer(divide) {
+function buildColorResultContainer() {
+  _historyCnt++
   const historiclPosition = document.createElement('div')
-  historiclPosition.id = "historiclPosition_"+_historyCnt
+  historiclPosition.id = "historicalPosition_"+_historyCnt
   historiclPosition.innerHTML = /*html*/`
     <span id="historicalDivide_${_historyCnt}" class="divider historicalDivide"></span> 
     <div id="historical_${_historyCnt}" class="historical"></div>
@@ -105,6 +106,10 @@ function buildHTML(c){
   if (!c.rgb && c.name === "transparent") {
     const resultColorTransparent = getComputedStyle(document.documentElement).getPropertyValue('--resultColorTransparent')
     colorElm.style.backgroundImage = resultColorTransparent
+    const start = Date.now();
+    while (Date.now() - start < 100) { // * Blocking while loop. 
+      // * This is a bit of a hack, but it works. The background image is a bit slow to load, so we just wait a bit.
+    }
   } 
 
   createColorClick(c, colorElm)
@@ -145,7 +150,6 @@ function addColorResultToHistory() {
   _newInput = false
   const saveReq = real_input.value
   const saveHistoricalCnt = _historyCnt
-  _historyCnt++
   buildColorResultContainer()
   falseInputText.innerHTML = ''
   real_input.value = ''
