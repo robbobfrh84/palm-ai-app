@@ -73,6 +73,15 @@ function toggleButtonsDisabled(status) {
   },300)
 }
 
+function handleError(msg){
+  _requestInProgress = false
+  _loaderOn = false
+  _newInput = true
+  setTimeout(()=>{turnOffLoader(true)},300)
+  toggleButtonsDisabled(false)
+  buildColorResultContainer(msg) 
+}
+
 
 /* - - - - - API - - - - - */ 
 function get(thing, resultsObj, keep){
@@ -100,21 +109,24 @@ function get(thing, resultsObj, keep){
     fetch(urlString)
       .then( res => res.json())
       .then( data => {
-        _newInput = true
-        handleColors(data, request, resultsObj) 
+        console.log('Search results data:',data)
+        if (data.validOutputs.length > 0) {
+          _newInput = true
+          handleColors(data, request, resultsObj) 
+        } else {
+          handleError(/*html*/` 
+            <br>
+            <div>Hmm... 🤔 Looks like we didn't get any colors with this search 🤷.</div>
+            <div>Maybe try again, or use a different term?</div>
+          `)
+        }
       })
       .catch( error => { 
-        _requestInProgress = false
-        _loaderOn = false
-        _newInput = true
-        setTimeout(()=>{turnOffLoader(true)},300)
-        toggleButtonsDisabled(false)
-        console.log('🚨 Error:', error) // * error needs to log to show any code error after this point. 
-        buildColorResultContainer()
-        window["historicalPosition_"+_historyCnt].innerHTML = /*html*/`
+        console.log('🚨 error:', error) // * error needs to log to show any code error after this point. 
+        handleError(/*html*/` 
           <br>
-          Ooops! Looks like, something went wrong 🤔... Try again later.
-        `
+          🚨 Ooops! Looks like, something went wrong 🤔... Try again later.
+        `)
       }) // * .finally( ()=> ... )
   } else if (real_input.value == "") {
     setTimeout(()=>{
