@@ -1,4 +1,4 @@
-function buildColorResultContainer() {
+function buildColorResultContainer(msg) {
   _historyCnt++
   const historiclPosition = document.createElement('div')
   historiclPosition.id = "historicalPosition_"+_historyCnt
@@ -6,6 +6,7 @@ function buildColorResultContainer() {
     <span id="historicalDivide_${_historyCnt}" class="divider historicalDivide"></span> 
     <div id="historical_${_historyCnt}" class="historical"></div>
     <div id="colorsResult_${_historyCnt}" class="colorResultsContainer"></div>
+    ${msg || ''}
   `
   resultsSection.prepend(historiclPosition)
 }
