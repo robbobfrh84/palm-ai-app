@@ -104,10 +104,17 @@ function get(thing, resultsObj, keep){
         handleColors(data, request, resultsObj) 
       })
       .catch( error => { 
+        _requestInProgress = false
         _loaderOn = false
+        _newInput = true
         setTimeout(()=>{turnOffLoader(true)},300)
         toggleButtonsDisabled(false)
-        console.log('🚨 error:', error) // * error needs to log to show any code error after this point. 
+        console.log('🚨 Error:', error) // * error needs to log to show any code error after this point. 
+        buildColorResultContainer()
+        window["historicalPosition_"+_historyCnt].innerHTML = /*html*/`
+          <br>
+          Ooops! Looks like, something went wrong 🤔... Try again later.
+        `
       }) // * .finally( ()=> ... )
   } else if (real_input.value == "") {
     setTimeout(()=>{

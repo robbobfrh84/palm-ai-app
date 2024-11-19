@@ -38,10 +38,16 @@ const reqTextPrompt = function( thing, colors ) {
   
     chatSession.sendMessage(promptString).then(result => {
       let outputs = JSON.parse(result.response.text())
-      console.log('🚨 thing, outputs:',thing, outputs)
-      if (!outputs.length > 0) {
+      console.log('thing, outputs:',thing, outputs)
+      if (outputs.output) {
+        outputs = outputs.output
+      } else if (outputs[thing]) {
         outputs = outputs[thing]
-      } 
+      }
+      // if (outputs.length > colors) { // * 👈 IF YOU WANT TO LIMITEED OUTPUTS
+      //   outputs = outputs.slice(0, colors);
+      // }
+      console.log(' - Curated outputs:', outputs)
       const { validOutputs, invalidOutputs } = isValidColors(outputs)
       resolve({ outputs, invalidOutputs, validOutputs })
     });
