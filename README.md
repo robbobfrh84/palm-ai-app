@@ -1,6 +1,8 @@
 # 🏝️ Colors A.I. 🎨
 🚨 **NOTE: this application was originally built using Google's Palm API. However, in October 2024, I updated it to use Google's Gemini API, because Palm was discontinued.** 
 
+🔥 Also NOTE: this domain is NOT set to auto-renew (expires: Aug 9, 2025)
+
 - I didn't change this repo name or other links because they've been shared and I don't want those links to be broken links. 
 
 An application built using the ~~PaLM API~~ (Update to Gemini API), the App is a fun color generator game that associates "Things" with "colors" by utilizing a trained AI Large Language Model to generate responses. 
