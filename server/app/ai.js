@@ -43,6 +43,11 @@ const reqTextPrompt = function( thing, colors ) {
         outputs = outputs.output
       } else if (outputs[thing]) {
         outputs = outputs[thing]
+      } 
+      if (outputs) {
+        if (typeof outputs === 'string') {
+          outputs = outputs.split(',').map(item => item.trim())
+        }
       }
       // if (outputs.length > colors) { // * 👈 IF YOU WANT TO LIMITEED OUTPUTS
       //   outputs = outputs.slice(0, colors);
