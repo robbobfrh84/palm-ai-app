@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "dotenv": "^16.3.1",
